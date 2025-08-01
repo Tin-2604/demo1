@@ -28,19 +28,26 @@ app.use(bodyParser.json());
 
 app.use(session({
   secret: process.env.SESSION_SECRET || 'pickleball_secret',
-  resave: false,
-  saveUninitialized: false,
+  resave: true,
+  saveUninitialized: true,
   cookie: {
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    secure: false, // Tắt secure cookie để tránh vấn đề HTTPS
+    maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    httpOnly: true
   }
 }));
 
 // Middleware kiểm tra đăng nhập
 const requireAuth = (req, res, next) => {
+  console.log('🔍 Checking auth for:', req.path);
+  console.log('📋 Session user:', req.session.user);
+  console.log('🍪 Session ID:', req.sessionID);
+  
   if (req.session.user) {
+    console.log('✅ User authenticated:', req.session.user.username);
     next(); // Cho phép truy cập nếu đã đăng nhập
   } else {
+    console.log('❌ User not authenticated, redirecting to login');
     res.redirect('/login'); // Chuyển hướng về trang login nếu chưa đăng nhập
   }
 };
