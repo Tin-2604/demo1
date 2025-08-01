@@ -184,6 +184,83 @@ app.get('/api/tournament-data', requireAuth, (req, res) => {
   });
 });
 
+// API route để lấy thông tin đội theo teamId
+app.get('/api/team-data', requireAuth, (req, res) => {
+  const teamId = req.query.teamId;
+  const userId = req.session.user.id;
+  
+  if (!teamId) {
+    return res.status(400).json({ success: false, message: 'Thiếu teamId' });
+  }
+  
+  let query = `
+    SELECT 
+      r.registration_id,
+      r.envent_id,
+      r.leader_name,
+      r.leader_phone,
+      p.id as player_id,
+      p.category,
+      p.full_name,
+      p.nick_name,
+      p.phone_number,
+      p.gender,
+      p.date_of_birth,
+      p.avatar_path
+    FROM registration r
+    LEFT JOIN players p ON r.registration_id = p.registration_id
+    WHERE r.registration_id = ?
+  `;
+  
+  let params = [teamId];
+  
+  // Kiểm tra quyền - chỉ cho phép user sở hữu hoặc admin
+  const isAdmin = req.session.user.role === 'BTC';
+  if (!isAdmin) {
+    query += ` AND r.user_id = ?`;
+    params.push(userId);
+  }
+  
+  query += ` ORDER BY p.id`;
+  
+  db.query(query, params, (err, results) => {
+    if (err) {
+      console.error('Lỗi query database:', err);
+      return res.status(500).json({ success: false, message: 'Lỗi database' });
+    }
+    
+    if (results.length === 0) {
+      return res.status(404).json({ success: false, message: 'Không tìm thấy thông tin đội' });
+    }
+    
+    // Nhóm dữ liệu theo registration
+    const teamData = {
+      registration_id: results[0].registration_id,
+      event_id: results[0].envent_id,
+      leader_name: results[0].leader_name,
+      leader_phone: results[0].leader_phone,
+      players: []
+    };
+    
+    results.forEach(row => {
+      if (row.player_id) {
+        teamData.players.push({
+          id: row.player_id,
+          category: row.category,
+          full_name: row.full_name,
+          nick_name: row.nick_name,
+          phone_number: row.phone_number,
+          gender: row.gender,
+          date_of_birth: row.date_of_birth,
+          avatar_path: row.avatar_path
+        });
+      }
+    });
+    
+    res.json({ success: true, data: teamData });
+  });
+});
+
 app.get('/dstd_admin', requireAuth, requireAdmin, (req, res) => {
   res.render('dstd_admin', { user: req.session.user });
 });
@@ -349,7 +426,19 @@ app.post('/api/add-player', requireAuth, upload.array('avatar[]'), (req, res) =>
           const phoneNum = phone_number[index];
           const genderVal = gender && gender[index] ? gender[index] : null;
           const birthdate = date_of_birth && date_of_birth[index] ? date_of_birth[index] : null;
-          const avatarPath = files[index] ? files[index].filename : null;
+          // For new registration: use file at the same index, but handle duplicate data
+          let avatarPath = null;
+          if (files && files[index]) {
+            avatarPath = files[index].filename;
+            console.log(`Using file for new player ${index + 1}:`, avatarPath);
+          } else {
+            console.error(`No file for new player ${index + 1}:`, { 
+              index, 
+              filesLength: files ? files.length : 0,
+              allFiles: files 
+            });
+            return reject(new Error(`Vận động viên ${index + 1}: Thiếu hình ảnh`));
+          }
           
           db.query(
             `INSERT INTO players (registration_id, category, full_name, nick_name, phone_number, gender, date_of_birth, avatar_path)
@@ -508,6 +597,202 @@ app.post('/api/update-player', requireAuth, upload.array('avatar[]'), (req, res)
             })
             .catch(err => {
               console.error('Lỗi cập nhật VĐV:', err);
+              res.status(500).json({ success: false, message: 'Lỗi database: ' + err.message });
+            });
+        }
+      );
+    }
+  );
+});
+
+// API route để cập nhật toàn bộ đội
+app.post('/api/update-team', requireAuth, upload.array('avatar[]'), (req, res) => {
+  console.log('API /api/update-team called');
+  console.log('Request body:', req.body);
+  console.log('Files:', req.files);
+  console.log('Session user:', req.session.user);
+  
+  const { fullname, phone, category, full_name, nick_name, phone_number, gender, date_of_birth, teamId, existing_images } = req.body;
+  const files = req.files;
+  
+  console.log('Existing images:', existing_images);
+  console.log('Files:', files);
+
+  // Validation
+  const errors = [];
+  
+  if (!fullname || fullname.trim().length < 2) {
+    errors.push('Họ và tên đội trưởng phải có ít nhất 2 ký tự');
+  }
+  
+  if (!phone || !/^[0-9]{10,11}$/.test(phone.replace(/\s/g, ''))) {
+    errors.push('Số điện thoại đội trưởng phải có 10-11 chữ số');
+  }
+  
+  if (!category) {
+    errors.push('Vui lòng chọn category');
+  }
+
+  if (!teamId) {
+    errors.push('Thiếu thông tin team ID');
+  }
+
+  // Validate athletes
+  if (!full_name || !Array.isArray(full_name) || full_name.length === 0) {
+    errors.push('Phải có ít nhất 1 vận động viên');
+  } else {
+    full_name.forEach((name, index) => {
+      if (!name || name.trim().length < 2) {
+        errors.push(`Vận động viên ${index + 1}: Họ và tên phải có ít nhất 2 ký tự`);
+      }
+    });
+  }
+
+  if (!phone_number || !Array.isArray(phone_number) || phone_number.length === 0) {
+    errors.push('Phải có ít nhất 1 vận động viên');
+  } else {
+    phone_number.forEach((phone, index) => {
+      if (!phone || !/^[0-9]{10,11}$/.test(phone.replace(/\s/g, ''))) {
+        errors.push(`Vận động viên ${index + 1}: Số điện thoại phải có 10-11 chữ số`);
+      }
+    });
+  }
+
+  // Validate images (optional for update)
+  if (files && files.length > 0) {
+    files.forEach((file, index) => {
+      if (!file.mimetype.startsWith('image/')) {
+        errors.push(`Vận động viên ${index + 1}: File phải là hình ảnh`);
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        errors.push(`Vận động viên ${index + 1}: File quá lớn (tối đa 5MB)`);
+      }
+    });
+  }
+  
+  if (errors.length > 0) {
+    return res.status(400).json({ success: false, message: 'Lỗi validation', errors });
+  }
+
+  // Update registration - allow admin to update any registration
+  const userId = req.session.user.id;
+  const isAdmin = req.session.user.role === 'BTC';
+  
+  let updateQuery, updateParams;
+  if (isAdmin) {
+    updateQuery = `UPDATE registration SET leader_name = ?, leader_phone = ? WHERE registration_id = ?`;
+    updateParams = [fullname, phone, teamId];
+  } else {
+    updateQuery = `UPDATE registration SET leader_name = ?, leader_phone = ? WHERE registration_id = ? AND user_id = ?`;
+    updateParams = [fullname, phone, teamId, userId];
+  }
+  
+  db.query(updateQuery, updateParams,
+    (err, result) => {
+      if (err) {
+        console.error('Lỗi cập nhật registration:', err);
+        return res.status(500).json({ success: false, message: 'Lỗi database: ' + err.message });
+      }
+      
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ success: false, message: 'Không tìm thấy thông tin để cập nhật' });
+      }
+      
+      // Delete existing players for this registration
+      db.query(
+        `DELETE FROM players WHERE registration_id = ?`,
+        [teamId],
+        (err, result) => {
+          if (err) {
+            console.error('Lỗi xóa players cũ:', err);
+            return res.status(500).json({ success: false, message: 'Lỗi database: ' + err.message });
+          }
+          
+          // Insert updated players
+          const playerPromises = full_name.map((name, index) => {
+            return new Promise((resolve, reject) => {
+              const nick = nick_name && nick_name[index] ? nick_name[index] : null;
+              const phoneNum = phone_number[index];
+              const genderVal = gender && gender[index] ? gender[index] : null;
+              const birthdate = date_of_birth && date_of_birth[index] ? date_of_birth[index] : null;
+              
+              // Validate required fields
+              if (!name || name.trim() === '') {
+                return reject(new Error(`Vận động viên ${index + 1}: Thiếu tên`));
+              }
+              
+              if (!phoneNum || phoneNum.trim() === '') {
+                return reject(new Error(`Vận động viên ${index + 1}: Thiếu số điện thoại`));
+              }
+              
+              if (!genderVal) {
+                return reject(new Error(`Vận động viên ${index + 1}: Thiếu giới tính`));
+              }
+              
+              // Determine avatar path - use new file if uploaded, otherwise keep existing
+              let avatarPath = null;
+              console.log(`Processing player ${index + 1}:`, {
+                hasFile: files && files[index],
+                existingImage: existing_images && existing_images[index],
+                allExistingImages: existing_images,
+                allFiles: files
+              });
+              
+              // Check if this player has a new file uploaded
+              const isEdit = req.body.isEdit === 'true';
+              
+              if (isEdit) {
+                // For edit mode: check if existing_images[index] is empty (meaning new file)
+                const hasNewFile = files && files.length > 0 && existing_images && existing_images[index] === '';
+                
+                if (hasNewFile) {
+                  // Find the first available file for edit mode
+                  const fileIndex = 0; // For now, use the first file
+                  avatarPath = files[fileIndex].filename;
+                  console.log(`Using new file for player ${index + 1}:`, avatarPath);
+                } else if (existing_images && existing_images[index] && existing_images[index] !== '') {
+                  avatarPath = existing_images[index];
+                  console.log(`Using existing image for player ${index + 1}:`, avatarPath);
+                }
+              } else {
+                // For new registration: use file at the same index
+                if (files && files[index]) {
+                  avatarPath = files[index].filename;
+                  console.log(`Using file for new player ${index + 1}:`, avatarPath);
+                }
+              }
+              
+              // If no avatar path is available, reject with error
+              if (!avatarPath) {
+                console.error(`No avatar path for player ${index + 1}:`, { 
+                  files: files && files[index], 
+                  existing: existing_images && existing_images[index],
+                  allExistingImages: existing_images 
+                });
+                return reject(new Error(`Vận động viên ${index + 1}: Thiếu hình ảnh`));
+              }
+              
+              db.query(
+                `INSERT INTO players (registration_id, category, full_name, nick_name, phone_number, gender, date_of_birth, avatar_path)
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+                [teamId, category, name, nick, phoneNum, genderVal, birthdate, avatarPath],
+                (err, result) => {
+                  if (err) {
+                    reject(err);
+                  } else {
+                    resolve(result);
+                  }
+                }
+              );
+            });
+          });
+          
+          Promise.all(playerPromises)
+            .then(() => {
+              res.json({ success: true, message: 'Cập nhật đội thành công', registration_id: teamId });
+            })
+            .catch(err => {
+              console.error('Lỗi cập nhật đội:', err);
               res.status(500).json({ success: false, message: 'Lỗi database: ' + err.message });
             });
         }

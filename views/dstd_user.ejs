@@ -512,25 +512,71 @@
         leaderName,
         leaderPhone
       ) {
-        // Chuyển hướng đến form đăng ký với dữ liệu đã chọn
-        const formData = {
-          category: category,
-          teamId: teamId,
-          fullName: fullName,
-          nickName: nickName,
-          phone: phone,
-          birthDate: birthDate,
-          gender: gender,
-          avatarPath: avatarPath,
-          leaderName: leaderName,
-          leaderPhone: leaderPhone,
-        };
+        // Lấy toàn bộ thông tin đội từ server
+        fetch(`/api/team-data?teamId=${teamId}`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              console.log('Team data loaded:', data.data);
+              // Chuyển hướng đến form đăng ký với dữ liệu đã chọn
+              const formData = {
+                category: category,
+                teamId: teamId,
+                leaderName: data.data.leader_name,
+                leaderPhone: data.data.leader_phone,
+                players: data.data.players, // Toàn bộ thông tin các thành viên
+                selectedPlayer: {
+                  fullName: fullName,
+                  nickName: nickName,
+                  phone: phone,
+                  birthDate: birthDate,
+                  gender: gender,
+                  avatarPath: avatarPath
+                }
+              };
 
-        // Lưu dữ liệu vào localStorage để form có thể đọc
-        localStorage.setItem("editPlayerData", JSON.stringify(formData));
+              // Lưu dữ liệu vào localStorage để form có thể đọc
+              localStorage.setItem("editPlayerData", JSON.stringify(formData));
 
-        // Chuyển hướng đến trang form
-        window.location.href = "/form?edit=true";
+              // Chuyển hướng đến trang form
+              window.location.href = "/form?edit=true";
+            } else {
+              console.error('Error loading team data:', data.message);
+              // Fallback to single player data
+              const formData = {
+                category: category,
+                teamId: teamId,
+                fullName: fullName,
+                nickName: nickName,
+                phone: phone,
+                birthDate: birthDate,
+                gender: gender,
+                avatarPath: avatarPath,
+                leaderName: leaderName,
+                leaderPhone: leaderPhone,
+              };
+              localStorage.setItem("editPlayerData", JSON.stringify(formData));
+              window.location.href = "/form?edit=true";
+            }
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            // Fallback to single player data
+            const formData = {
+              category: category,
+              teamId: teamId,
+              fullName: fullName,
+              nickName: nickName,
+              phone: phone,
+              birthDate: birthDate,
+              gender: gender,
+              avatarPath: avatarPath,
+              leaderName: leaderName,
+              leaderPhone: leaderPhone,
+            };
+            localStorage.setItem("editPlayerData", JSON.stringify(formData));
+            window.location.href = "/form?edit=true";
+          });
       }
 
       // Close edit selection modal when clicking on X

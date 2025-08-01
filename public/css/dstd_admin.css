@@ -5,7 +5,8 @@
   box-sizing: border-box !important;
 }
 
-html, body {
+html,
+body {
   height: 100% !important;
   width: 100% !important;
   overflow-x: hidden !important;
@@ -85,7 +86,7 @@ body {
   right: 0 !important;
   width: 1156px !important;
   height: 1024px !important;
-  
+
   background: transparent !important;
   box-sizing: border-box !important;
 }
@@ -119,7 +120,7 @@ body {
   transform: translateX(-50%) !important;
   width: 1092px !important;
   height: 48px !important;
-  
+
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -159,7 +160,8 @@ body {
 /* Admin Khung K */
 .admin-khung-k {
   position: absolute !important;
-  top: 169px !important; /* Đáy khung K cách đỉnh khung a3 đúng 32px */
+  top: 169px !important;
+  /* Đáy khung K cách đỉnh khung a3 đúng 32px */
   left: 51% !important;
   transform: translateX(-50%) !important;
   width: 1092px !important;
@@ -209,7 +211,7 @@ body {
   transform: translateX(-50%) !important;
   width: 1092px !important;
   height: 535px !important;
-  
+
   box-sizing: border-box !important;
   overflow-y: auto !important;
   overflow-x: auto !important;
@@ -228,14 +230,23 @@ body {
   left: 0 !important;
   width: 1565px !important;
   height: 39px !important;
- 
+
   display: flex !important;
   align-items: center !important;
   box-sizing: border-box !important;
 }
 
 /* Các khung con trong Admin B */
-.admin-khung-b0, .admin-khung-b1, .admin-khung-b2, .admin-khung-b3, .admin-khung-b4, .admin-khung-b5, .admin-khung-b6, .admin-khung-b7, .admin-khung-b8, .admin-khung-b9 {
+.admin-khung-b0,
+.admin-khung-b1,
+.admin-khung-b2,
+.admin-khung-b3,
+.admin-khung-b4,
+.admin-khung-b5,
+.admin-khung-b6,
+.admin-khung-b7,
+.admin-khung-b8,
+.admin-khung-b9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -245,48 +256,54 @@ body {
   text-align: center !important;
 }
 
-.admin-khung-b1 { 
-  width: 96px !important; 
+.admin-khung-b1 {
+  width: 96px !important;
   justify-content: center !important;
 }
-.admin-khung-b2 { 
-  width: 200px !important; 
+
+.admin-khung-b2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-b3 { 
-  width: 133px !important; 
-  justify-content: center !important;
-}
-.admin-khung-b4 { 
-  width: 168px !important; 
-  justify-content: center !important;
-}
-.admin-khung-b5 { 
-  width: 144px !important; 
-  justify-content: center !important;
-}
-.admin-khung-b6 { 
-  width: 140px !important; 
-  justify-content: center !important;
-}
-.admin-khung-b7 { 
-  width: 172px !important; 
+
+.admin-khung-b3 {
+  width: 133px !important;
   justify-content: center !important;
 }
 
-.admin-khung-b0 { 
-  width: 128px !important; 
+.admin-khung-b4 {
+  width: 168px !important;
   justify-content: center !important;
 }
 
-.admin-khung-b8 { 
-  width: 233px !important; 
+.admin-khung-b5 {
+  width: 144px !important;
   justify-content: center !important;
 }
 
-.admin-khung-b9 { 
-  width: 182px !important; 
+.admin-khung-b6 {
+  width: 140px !important;
+  justify-content: center !important;
+}
+
+.admin-khung-b7 {
+  width: 172px !important;
+  justify-content: center !important;
+}
+
+.admin-khung-b0 {
+  width: 128px !important;
+  justify-content: center !important;
+}
+
+.admin-khung-b8 {
+  width: 233px !important;
+  justify-content: center !important;
+}
+
+.admin-khung-b9 {
+  width: 182px !important;
   justify-content: center !important;
 }
 
@@ -313,7 +330,16 @@ body {
 }
 
 /* Các khung con trong Admin C */
-.admin-khung-c0, .admin-khung-c1, .admin-khung-c2, .admin-khung-c3, .admin-khung-c4, .admin-khung-c5, .admin-khung-c6, .admin-khung-c7, .admin-khung-c8, .admin-khung-c9 {
+.admin-khung-c0,
+.admin-khung-c1,
+.admin-khung-c2,
+.admin-khung-c3,
+.admin-khung-c4,
+.admin-khung-c5,
+.admin-khung-c6,
+.admin-khung-c7,
+.admin-khung-c8,
+.admin-khung-c9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -322,44 +348,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-c0 { 
-  width: 128px !important; 
+.admin-khung-c0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-c1 { 
-  width: 96px !important; 
+.admin-khung-c1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-c2 { 
-  width: 200px !important; 
+
+.admin-khung-c2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-c3 { 
-  width: 133px !important; 
+
+.admin-khung-c3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-c4 { 
-  width: 168px !important; 
+
+.admin-khung-c4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-c5 { 
-  width: 144px !important; 
+
+.admin-khung-c5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-c6 { 
-  width: 140px !important; 
+
+.admin-khung-c6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-c7 { 
-  width: 172px !important; 
+
+.admin-khung-c7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -368,14 +400,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-c8 { 
-  width: 233px !important; 
+.admin-khung-c8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-c9 { 
-  width: 182px !important; 
+.admin-khung-c9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -434,7 +466,16 @@ body {
 }
 
 /* Các khung con trong Admin D */
-.admin-khung-d0, .admin-khung-d1, .admin-khung-d2, .admin-khung-d3, .admin-khung-d4, .admin-khung-d5, .admin-khung-d6, .admin-khung-d7, .admin-khung-d8, .admin-khung-d9 {
+.admin-khung-d0,
+.admin-khung-d1,
+.admin-khung-d2,
+.admin-khung-d3,
+.admin-khung-d4,
+.admin-khung-d5,
+.admin-khung-d6,
+.admin-khung-d7,
+.admin-khung-d8,
+.admin-khung-d9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -443,44 +484,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-d0 { 
-  width: 128px !important; 
+.admin-khung-d0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-d1 { 
-  width: 96px !important; 
+.admin-khung-d1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-d2 { 
-  width: 200px !important; 
+
+.admin-khung-d2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-d3 { 
-  width: 133px !important; 
+
+.admin-khung-d3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-d4 { 
-  width: 168px !important; 
+
+.admin-khung-d4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-d5 { 
-  width: 144px !important; 
+
+.admin-khung-d5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-d6 { 
-  width: 140px !important; 
+
+.admin-khung-d6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-d7 { 
-  width: 172px !important; 
+
+.admin-khung-d7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -489,14 +536,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-d8 { 
-  width: 233px !important; 
+.admin-khung-d8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-d9 { 
-  width: 182px !important; 
+.admin-khung-d9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -555,7 +602,16 @@ body {
 }
 
 /* Các khung con trong Admin E */
-.admin-khung-e0, .admin-khung-e1, .admin-khung-e2, .admin-khung-e3, .admin-khung-e4, .admin-khung-e5, .admin-khung-e6, .admin-khung-e7, .admin-khung-e8, .admin-khung-e9 {
+.admin-khung-e0,
+.admin-khung-e1,
+.admin-khung-e2,
+.admin-khung-e3,
+.admin-khung-e4,
+.admin-khung-e5,
+.admin-khung-e6,
+.admin-khung-e7,
+.admin-khung-e8,
+.admin-khung-e9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -564,44 +620,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-e0 { 
-  width: 128px !important; 
+.admin-khung-e0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-e1 { 
-  width: 96px !important; 
+.admin-khung-e1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-e2 { 
-  width: 200px !important; 
+
+.admin-khung-e2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-e3 { 
-  width: 133px !important; 
+
+.admin-khung-e3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-e4 { 
-  width: 168px !important; 
+
+.admin-khung-e4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-e5 { 
-  width: 144px !important; 
+
+.admin-khung-e5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-e6 { 
-  width: 140px !important; 
+
+.admin-khung-e6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-e7 { 
-  width: 172px !important; 
+
+.admin-khung-e7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -610,14 +672,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-e8 { 
-  width: 233px !important; 
+.admin-khung-e8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-e9 { 
-  width: 182px !important; 
+.admin-khung-e9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -676,7 +738,16 @@ body {
 }
 
 /* Các khung con trong Admin F */
-.admin-khung-f0, .admin-khung-f1, .admin-khung-f2, .admin-khung-f3, .admin-khung-f4, .admin-khung-f5, .admin-khung-f6, .admin-khung-f7, .admin-khung-f8, .admin-khung-f9 {
+.admin-khung-f0,
+.admin-khung-f1,
+.admin-khung-f2,
+.admin-khung-f3,
+.admin-khung-f4,
+.admin-khung-f5,
+.admin-khung-f6,
+.admin-khung-f7,
+.admin-khung-f8,
+.admin-khung-f9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -685,44 +756,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-f0 { 
-  width: 128px !important; 
+.admin-khung-f0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-f1 { 
-  width: 96px !important; 
+.admin-khung-f1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-f2 { 
-  width: 200px !important; 
+
+.admin-khung-f2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-f3 { 
-  width: 133px !important; 
+
+.admin-khung-f3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-f4 { 
-  width: 168px !important; 
+
+.admin-khung-f4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-f5 { 
-  width: 144px !important; 
+
+.admin-khung-f5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-f6 { 
-  width: 140px !important; 
+
+.admin-khung-f6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-f7 { 
-  width: 172px !important; 
+
+.admin-khung-f7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -731,14 +808,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-f8 { 
-  width: 233px !important; 
+.admin-khung-f8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-f9 { 
-  width: 182px !important; 
+.admin-khung-f9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -797,7 +874,16 @@ body {
 }
 
 /* Các khung con trong Admin G */
-.admin-khung-g0, .admin-khung-g1, .admin-khung-g2, .admin-khung-g3, .admin-khung-g4, .admin-khung-g5, .admin-khung-g6, .admin-khung-g7, .admin-khung-g8, .admin-khung-g9 {
+.admin-khung-g0,
+.admin-khung-g1,
+.admin-khung-g2,
+.admin-khung-g3,
+.admin-khung-g4,
+.admin-khung-g5,
+.admin-khung-g6,
+.admin-khung-g7,
+.admin-khung-g8,
+.admin-khung-g9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -806,44 +892,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-g0 { 
-  width: 128px !important; 
+.admin-khung-g0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-g1 { 
-  width: 96px !important; 
+.admin-khung-g1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-g2 { 
-  width: 200px !important; 
+
+.admin-khung-g2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-g3 { 
-  width: 133px !important; 
+
+.admin-khung-g3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-g4 { 
-  width: 168px !important; 
+
+.admin-khung-g4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-g5 { 
-  width: 144px !important; 
+
+.admin-khung-g5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-g6 { 
-  width: 140px !important; 
+
+.admin-khung-g6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-g7 { 
-  width: 172px !important; 
+
+.admin-khung-g7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -852,14 +944,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-g8 { 
-  width: 233px !important; 
+.admin-khung-g8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-g9 { 
-  width: 182px !important; 
+.admin-khung-g9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -918,7 +1010,16 @@ body {
 }
 
 /* Các khung con trong Admin H */
-.admin-khung-h0, .admin-khung-h1, .admin-khung-h2, .admin-khung-h3, .admin-khung-h4, .admin-khung-h5, .admin-khung-h6, .admin-khung-h7, .admin-khung-h8, .admin-khung-h9 {
+.admin-khung-h0,
+.admin-khung-h1,
+.admin-khung-h2,
+.admin-khung-h3,
+.admin-khung-h4,
+.admin-khung-h5,
+.admin-khung-h6,
+.admin-khung-h7,
+.admin-khung-h8,
+.admin-khung-h9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -927,44 +1028,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-h0 { 
-  width: 128px !important; 
+.admin-khung-h0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-h1 { 
-  width: 96px !important; 
+.admin-khung-h1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-h2 { 
-  width: 200px !important; 
+
+.admin-khung-h2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-h3 { 
-  width: 133px !important; 
+
+.admin-khung-h3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-h4 { 
-  width: 168px !important; 
+
+.admin-khung-h4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-h5 { 
-  width: 144px !important; 
+
+.admin-khung-h5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-h6 { 
-  width: 140px !important; 
+
+.admin-khung-h6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-h7 { 
-  width: 172px !important; 
+
+.admin-khung-h7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -973,14 +1080,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-h8 { 
-  width: 233px !important; 
+.admin-khung-h8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-h9 { 
-  width: 182px !important; 
+.admin-khung-h9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -1039,7 +1146,16 @@ body {
 }
 
 /* Các khung con trong Admin T */
-.admin-khung-t0, .admin-khung-t1, .admin-khung-t2, .admin-khung-t3, .admin-khung-t4, .admin-khung-t5, .admin-khung-t6, .admin-khung-t7, .admin-khung-t8, .admin-khung-t9 {
+.admin-khung-t0,
+.admin-khung-t1,
+.admin-khung-t2,
+.admin-khung-t3,
+.admin-khung-t4,
+.admin-khung-t5,
+.admin-khung-t6,
+.admin-khung-t7,
+.admin-khung-t8,
+.admin-khung-t9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -1048,44 +1164,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-t0 { 
-  width: 128px !important; 
+.admin-khung-t0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-t1 { 
-  width: 96px !important; 
+.admin-khung-t1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-t2 { 
-  width: 200px !important; 
+
+.admin-khung-t2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-t3 { 
-  width: 133px !important; 
+
+.admin-khung-t3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-t4 { 
-  width: 168px !important; 
+
+.admin-khung-t4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-t5 { 
-  width: 144px !important; 
+
+.admin-khung-t5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-t6 { 
-  width: 140px !important; 
+
+.admin-khung-t6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-t7 { 
-  width: 172px !important; 
+
+.admin-khung-t7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -1094,14 +1216,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-t8 { 
-  width: 233px !important; 
+.admin-khung-t8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-t9 { 
-  width: 182px !important; 
+.admin-khung-t9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -1160,7 +1282,16 @@ body {
 }
 
 /* Các khung con trong Admin X */
-.admin-khung-x0, .admin-khung-x1, .admin-khung-x2, .admin-khung-x3, .admin-khung-x4, .admin-khung-x5, .admin-khung-x6, .admin-khung-x7, .admin-khung-x8, .admin-khung-x9 {
+.admin-khung-x0,
+.admin-khung-x1,
+.admin-khung-x2,
+.admin-khung-x3,
+.admin-khung-x4,
+.admin-khung-x5,
+.admin-khung-x6,
+.admin-khung-x7,
+.admin-khung-x8,
+.admin-khung-x9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -1169,44 +1300,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-x0 { 
-  width: 128px !important; 
+.admin-khung-x0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-x1 { 
-  width: 96px !important; 
+.admin-khung-x1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-x2 { 
-  width: 200px !important; 
+
+.admin-khung-x2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-x3 { 
-  width: 133px !important; 
+
+.admin-khung-x3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-x4 { 
-  width: 168px !important; 
+
+.admin-khung-x4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-x5 { 
-  width: 144px !important; 
+
+.admin-khung-x5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-x6 { 
-  width: 140px !important; 
+
+.admin-khung-x6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-x7 { 
-  width: 172px !important; 
+
+.admin-khung-x7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -1215,14 +1352,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-x8 { 
-  width: 233px !important; 
+.admin-khung-x8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-x9 { 
-  width: 182px !important; 
+.admin-khung-x9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -1281,7 +1418,16 @@ body {
 }
 
 /* Các khung con trong Admin Y */
-.admin-khung-y0, .admin-khung-y1, .admin-khung-y2, .admin-khung-y3, .admin-khung-y4, .admin-khung-y5, .admin-khung-y6, .admin-khung-y7, .admin-khung-y8, .admin-khung-y9 {
+.admin-khung-y0,
+.admin-khung-y1,
+.admin-khung-y2,
+.admin-khung-y3,
+.admin-khung-y4,
+.admin-khung-y5,
+.admin-khung-y6,
+.admin-khung-y7,
+.admin-khung-y8,
+.admin-khung-y9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -1290,44 +1436,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-y0 { 
-  width: 128px !important; 
+.admin-khung-y0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-y1 { 
-  width: 96px !important; 
+.admin-khung-y1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-y2 { 
-  width: 200px !important; 
+
+.admin-khung-y2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-y3 { 
-  width: 133px !important; 
+
+.admin-khung-y3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-y4 { 
-  width: 168px !important; 
+
+.admin-khung-y4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-y5 { 
-  width: 144px !important; 
+
+.admin-khung-y5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-y6 { 
-  width: 140px !important; 
+
+.admin-khung-y6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-y7 { 
-  width: 172px !important; 
+
+.admin-khung-y7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -1336,14 +1488,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-y8 { 
-  width: 233px !important; 
+.admin-khung-y8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-y9 { 
-  width: 182px !important; 
+.admin-khung-y9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -1402,7 +1554,16 @@ body {
 }
 
 /* Các khung con trong Admin Z */
-.admin-khung-z0, .admin-khung-z1, .admin-khung-z2, .admin-khung-z3, .admin-khung-z4, .admin-khung-z5, .admin-khung-z6, .admin-khung-z7, .admin-khung-z8, .admin-khung-z9 {
+.admin-khung-z0,
+.admin-khung-z1,
+.admin-khung-z2,
+.admin-khung-z3,
+.admin-khung-z4,
+.admin-khung-z5,
+.admin-khung-z6,
+.admin-khung-z7,
+.admin-khung-z8,
+.admin-khung-z9 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -1411,44 +1572,50 @@ body {
   color: #FFFFFF !important;
 }
 
-.admin-khung-z0 { 
-  width: 128px !important; 
+.admin-khung-z0 {
+  width: 128px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-z1 { 
-  width: 96px !important; 
+.admin-khung-z1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-z2 { 
-  width: 200px !important; 
+
+.admin-khung-z2 {
+  width: 200px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-z3 { 
-  width: 133px !important; 
+
+.admin-khung-z3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-z4 { 
-  width: 168px !important; 
+
+.admin-khung-z4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-z5 { 
-  width: 144px !important; 
+
+.admin-khung-z5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-z6 { 
-  width: 140px !important; 
+
+.admin-khung-z6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.admin-khung-z7 { 
-  width: 172px !important; 
+
+.admin-khung-z7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -1457,14 +1624,14 @@ body {
   cursor: pointer !important;
 }
 
-.admin-khung-z8 { 
-  width: 233px !important; 
+.admin-khung-z8 {
+  width: 233px !important;
   justify-content: center !important;
   text-align: center !important;
 }
 
-.admin-khung-z9 { 
-  width: 182px !important; 
+.admin-khung-z9 {
+  width: 182px !important;
   justify-content: center !important;
   text-align: center !important;
 }
@@ -1608,7 +1775,7 @@ body {
 /* Admin Khung J2 */
 .admin-khung-j2 {
   position: absolute !important;
-border-radius: 24px !important;
+  border-radius: 24px !important;
   right: 0 !important;
   top: 0 !important;
   width: 230px !important;
@@ -1634,7 +1801,8 @@ border-radius: 24px !important;
   width: 24px !important;
   height: 24px !important;
   background: url('/images/doc.png') center center / cover no-repeat !important;
-  filter: brightness(0) invert(1) !important; /* Chuyển màu đen thành trắng */
+  filter: brightness(0) invert(1) !important;
+  /* Chuyển màu đen thành trắng */
 }
 
 /* Admin Khung J22 */
@@ -1647,7 +1815,7 @@ border-radius: 24px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  
+
   border-radius: 24px !important;
   color: var(--Foundation-Neutral---White-Light, #FFF) !important;
   font-size: 20px !important;
@@ -1657,7 +1825,8 @@ border-radius: 24px !important;
 /* Admin Khung M */
 .admin-khung-m {
   position: absolute !important;
-  top: 800px !important; /* 20px phía trên khung J (900px - 20px) */
+  top: 800px !important;
+  /* 20px phía trên khung J (900px - 20px) */
   left: 577px !important;
   transform: translateX(-50%) !important;
   width: 1092px !important;
@@ -1682,7 +1851,8 @@ border-radius: 24px !important;
 /* Admin Khung M2 */
 .admin-khung-m2 {
   position: absolute !important;
-  left: 1054px !important; /* 1020px + 24px + 10px */
+  left: 1054px !important;
+  /* 1020px + 24px + 10px */
   top: 50% !important;
   transform: translateY(-50%) !important;
   width: 38px !important;
@@ -1714,6 +1884,7 @@ border-radius: 24px !important;
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1724,6 +1895,7 @@ border-radius: 24px !important;
     transform: translateY(-50px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;

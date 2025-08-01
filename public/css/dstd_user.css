@@ -5,7 +5,8 @@
   box-sizing: border-box !important;
 }
 
-html, body {
+html,
+body {
   height: 100% !important;
   width: 100% !important;
   overflow-x: hidden !important;
@@ -88,7 +89,7 @@ body {
 .sidebar nav a.active {
   color: #007BFF !important;
   font-weight: bold !important;
-  
+
   border-radius: 8px !important;
   padding: 8px 12px !important;
   margin: -8px -12px !important;
@@ -183,7 +184,7 @@ body {
   right: 0 !important;
   width: 1156px !important;
   height: 1024px !important;
-  
+
   background: transparent !important;
   box-sizing: border-box !important;
 }
@@ -217,7 +218,7 @@ body {
   transform: translateX(-50%) !important;
   width: 1092px !important;
   height: 48px !important;
-  
+
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -243,7 +244,8 @@ body {
 }
 
 .khung-a2-item:hover {
-  background: #3399FF !important; /* Nhạt hơn nữa */
+  background: #3399FF !important;
+  /* Nhạt hơn nữa */
   font-weight: bold !important;
 }
 
@@ -262,12 +264,14 @@ body {
   transform: translateX(-50%) !important;
   width: 1092px !important;
   height: 751px !important;
-  
+
   box-sizing: border-box !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  scrollbar-width: none !important; /* Firefox */
-  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+  scrollbar-width: none !important;
+  /* Firefox */
+  -ms-overflow-style: none !important;
+  /* Internet Explorer 10+ */
 }
 
 /* Ẩn thanh cuộn cho Webkit browsers (Chrome, Safari, Edge) */
@@ -282,14 +286,20 @@ body {
   left: 0 !important;
   width: 1093px !important;
   height: 39px !important;
- 
+
   display: flex !important;
   align-items: center !important;
   box-sizing: border-box !important;
 }
 
 /* Các khung con trong B */
-.khung-b1, .khung-b2, .khung-b3, .khung-b4, .khung-b5, .khung-b6, .khung-b7 {
+.khung-b1,
+.khung-b2,
+.khung-b3,
+.khung-b4,
+.khung-b5,
+.khung-b6,
+.khung-b7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -299,34 +309,40 @@ body {
   text-align: center !important;
 }
 
-.khung-b1 { 
-  width: 96px !important; 
+.khung-b1 {
+  width: 96px !important;
   justify-content: center !important;
 }
-.khung-b2 { 
-  width: 207px !important; 
+
+.khung-b2 {
+  width: 207px !important;
   justify-content: center !important;
   text-align: center !important;
   padding-left: 0 !important;
 }
-.khung-b3 { 
-  width: 133px !important; 
+
+.khung-b3 {
+  width: 133px !important;
   justify-content: center !important;
 }
-.khung-b4 { 
-  width: 168px !important; 
+
+.khung-b4 {
+  width: 168px !important;
   justify-content: center !important;
 }
-.khung-b5 { 
-  width: 144px !important; 
+
+.khung-b5 {
+  width: 144px !important;
   justify-content: center !important;
 }
-.khung-b6 { 
-  width: 140px !important; 
+
+.khung-b6 {
+  width: 140px !important;
   justify-content: center !important;
 }
-.khung-b7 { 
-  width: 172px !important; 
+
+.khung-b7 {
+  width: 172px !important;
   justify-content: center !important;
 }
 
@@ -353,7 +369,13 @@ body {
 }
 
 /* Các khung con trong C */
-.khung-c1, .khung-c2, .khung-c3, .khung-c4, .khung-c5, .khung-c6, .khung-c7 {
+.khung-c1,
+.khung-c2,
+.khung-c3,
+.khung-c4,
+.khung-c5,
+.khung-c6,
+.khung-c7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -362,39 +384,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-c1 { 
-  width: 96px !important; 
+.khung-c1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-c2 { 
-  width: 207px !important; 
+
+.khung-c2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-c3 { 
-  width: 133px !important; 
+
+.khung-c3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-c4 { 
-  width: 168px !important; 
+
+.khung-c4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-c5 { 
-  width: 144px !important; 
+
+.khung-c5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-c6 { 
-  width: 140px !important; 
+
+.khung-c6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-c7 { 
-  width: 172px !important; 
+
+.khung-c7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -404,7 +432,8 @@ body {
 }
 
 .khung-c7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -457,7 +486,13 @@ body {
 }
 
 /* Các khung con trong D */
-.khung-d1, .khung-d2, .khung-d3, .khung-d4, .khung-d5, .khung-d6, .khung-d7 {
+.khung-d1,
+.khung-d2,
+.khung-d3,
+.khung-d4,
+.khung-d5,
+.khung-d6,
+.khung-d7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -466,39 +501,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-d1 { 
-  width: 96px !important; 
+.khung-d1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-d2 { 
-  width: 207px !important; 
+
+.khung-d2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-d3 { 
-  width: 133px !important; 
+
+.khung-d3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-d4 { 
-  width: 168px !important; 
+
+.khung-d4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-d5 { 
-  width: 144px !important; 
+
+.khung-d5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-d6 { 
-  width: 140px !important; 
+
+.khung-d6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-d7 { 
-  width: 172px !important; 
+
+.khung-d7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -508,7 +549,8 @@ body {
 }
 
 .khung-d7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -561,7 +603,13 @@ body {
 }
 
 /* Các khung con trong E */
-.khung-e1, .khung-e2, .khung-e3, .khung-e4, .khung-e5, .khung-e6, .khung-e7 {
+.khung-e1,
+.khung-e2,
+.khung-e3,
+.khung-e4,
+.khung-e5,
+.khung-e6,
+.khung-e7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -570,39 +618,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-e1 { 
-  width: 96px !important; 
+.khung-e1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-e2 { 
-  width: 207px !important; 
+
+.khung-e2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-e3 { 
-  width: 133px !important; 
+
+.khung-e3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-e4 { 
-  width: 168px !important; 
+
+.khung-e4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-e5 { 
-  width: 144px !important; 
+
+.khung-e5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-e6 { 
-  width: 140px !important; 
+
+.khung-e6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-e7 { 
-  width: 172px !important; 
+
+.khung-e7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -612,7 +666,8 @@ body {
 }
 
 .khung-e7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -665,7 +720,13 @@ body {
 }
 
 /* Các khung con trong F */
-.khung-f1, .khung-f2, .khung-f3, .khung-f4, .khung-f5, .khung-f6, .khung-f7 {
+.khung-f1,
+.khung-f2,
+.khung-f3,
+.khung-f4,
+.khung-f5,
+.khung-f6,
+.khung-f7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -674,39 +735,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-f1 { 
-  width: 96px !important; 
+.khung-f1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-f2 { 
-  width: 207px !important; 
+
+.khung-f2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-f3 { 
-  width: 133px !important; 
+
+.khung-f3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-f4 { 
-  width: 168px !important; 
+
+.khung-f4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-f5 { 
-  width: 144px !important; 
+
+.khung-f5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-f6 { 
-  width: 140px !important; 
+
+.khung-f6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-f7 { 
-  width: 172px !important; 
+
+.khung-f7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -716,7 +783,8 @@ body {
 }
 
 .khung-f7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -769,7 +837,13 @@ body {
 }
 
 /* Các khung con trong G */
-.khung-g1, .khung-g2, .khung-g3, .khung-g4, .khung-g5, .khung-g6, .khung-g7 {
+.khung-g1,
+.khung-g2,
+.khung-g3,
+.khung-g4,
+.khung-g5,
+.khung-g6,
+.khung-g7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -778,39 +852,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-g1 { 
-  width: 96px !important; 
+.khung-g1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-g2 { 
-  width: 207px !important; 
+
+.khung-g2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-g3 { 
-  width: 133px !important; 
+
+.khung-g3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-g4 { 
-  width: 168px !important; 
+
+.khung-g4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-g5 { 
-  width: 144px !important; 
+
+.khung-g5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-g6 { 
-  width: 140px !important; 
+
+.khung-g6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-g7 { 
-  width: 172px !important; 
+
+.khung-g7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -820,7 +900,8 @@ body {
 }
 
 .khung-g7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -873,7 +954,13 @@ body {
 }
 
 /* Các khung con trong H */
-.khung-h1, .khung-h2, .khung-h3, .khung-h4, .khung-h5, .khung-h6, .khung-h7 {
+.khung-h1,
+.khung-h2,
+.khung-h3,
+.khung-h4,
+.khung-h5,
+.khung-h6,
+.khung-h7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -882,39 +969,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-h1 { 
-  width: 96px !important; 
+.khung-h1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-h2 { 
-  width: 207px !important; 
+
+.khung-h2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-h3 { 
-  width: 133px !important; 
+
+.khung-h3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-h4 { 
-  width: 168px !important; 
+
+.khung-h4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-h5 { 
-  width: 144px !important; 
+
+.khung-h5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-h6 { 
-  width: 140px !important; 
+
+.khung-h6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-h7 { 
-  width: 172px !important; 
+
+.khung-h7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -924,7 +1017,8 @@ body {
 }
 
 .khung-h7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -977,7 +1071,13 @@ body {
 }
 
 /* Các khung con trong T */
-.khung-t1, .khung-t2, .khung-t3, .khung-t4, .khung-t5, .khung-t6, .khung-t7 {
+.khung-t1,
+.khung-t2,
+.khung-t3,
+.khung-t4,
+.khung-t5,
+.khung-t6,
+.khung-t7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -986,39 +1086,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-t1 { 
-  width: 96px !important; 
+.khung-t1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-t2 { 
-  width: 207px !important; 
+
+.khung-t2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-t3 { 
-  width: 133px !important; 
+
+.khung-t3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-t4 { 
-  width: 168px !important; 
+
+.khung-t4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-t5 { 
-  width: 144px !important; 
+
+.khung-t5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-t6 { 
-  width: 140px !important; 
+
+.khung-t6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-t7 { 
-  width: 172px !important; 
+
+.khung-t7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -1028,7 +1134,8 @@ body {
 }
 
 .khung-t7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -1081,7 +1188,13 @@ body {
 }
 
 /* Các khung con trong X */
-.khung-x1, .khung-x2, .khung-x3, .khung-x4, .khung-x5, .khung-x6, .khung-x7 {
+.khung-x1,
+.khung-x2,
+.khung-x3,
+.khung-x4,
+.khung-x5,
+.khung-x6,
+.khung-x7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -1090,39 +1203,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-x1 { 
-  width: 96px !important; 
+.khung-x1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-x2 { 
-  width: 207px !important; 
+
+.khung-x2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-x3 { 
-  width: 133px !important; 
+
+.khung-x3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-x4 { 
-  width: 168px !important; 
+
+.khung-x4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-x5 { 
-  width: 144px !important; 
+
+.khung-x5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-x6 { 
-  width: 140px !important; 
+
+.khung-x6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-x7 { 
-  width: 172px !important; 
+
+.khung-x7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -1132,7 +1251,8 @@ body {
 }
 
 .khung-x7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -1185,7 +1305,13 @@ body {
 }
 
 /* Các khung con trong Y */
-.khung-y1, .khung-y2, .khung-y3, .khung-y4, .khung-y5, .khung-y6, .khung-y7 {
+.khung-y1,
+.khung-y2,
+.khung-y3,
+.khung-y4,
+.khung-y5,
+.khung-y6,
+.khung-y7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -1194,39 +1320,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-y1 { 
-  width: 96px !important; 
+.khung-y1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-y2 { 
-  width: 207px !important; 
+
+.khung-y2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-y3 { 
-  width: 133px !important; 
+
+.khung-y3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-y4 { 
-  width: 168px !important; 
+
+.khung-y4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-y5 { 
-  width: 144px !important; 
+
+.khung-y5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-y6 { 
-  width: 140px !important; 
+
+.khung-y6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-y7 { 
-  width: 172px !important; 
+
+.khung-y7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -1236,7 +1368,8 @@ body {
 }
 
 .khung-y7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -1289,7 +1422,13 @@ body {
 }
 
 /* Các khung con trong Z */
-.khung-z1, .khung-z2, .khung-z3, .khung-z4, .khung-z5, .khung-z6, .khung-z7 {
+.khung-z1,
+.khung-z2,
+.khung-z3,
+.khung-z4,
+.khung-z5,
+.khung-z6,
+.khung-z7 {
   height: 39px !important;
   display: flex !important;
   align-items: center !important;
@@ -1298,39 +1437,45 @@ body {
   color: #FFFFFF !important;
 }
 
-.khung-z1 { 
-  width: 96px !important; 
+.khung-z1 {
+  width: 96px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-z2 { 
-  width: 207px !important; 
+
+.khung-z2 {
+  width: 207px !important;
   justify-content: flex-start !important;
   text-align: left !important;
   padding-left: 15px !important;
 }
-.khung-z3 { 
-  width: 133px !important; 
+
+.khung-z3 {
+  width: 133px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-z4 { 
-  width: 168px !important; 
+
+.khung-z4 {
+  width: 168px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-z5 { 
-  width: 144px !important; 
+
+.khung-z5 {
+  width: 144px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-z6 { 
-  width: 140px !important; 
+
+.khung-z6 {
+  width: 140px !important;
   justify-content: center !important;
   text-align: center !important;
 }
-.khung-z7 { 
-  width: 172px !important; 
+
+.khung-z7 {
+  width: 172px !important;
   background: var(--Foundation-Primary-Normal, #007BFF) !important;
   border-radius: 24px !important;
   position: relative !important;
@@ -1340,7 +1485,8 @@ body {
 }
 
 .khung-z7:hover {
-  background: #0056CC !important; /* Đậm thêm 50% */
+  background: #0056CC !important;
+  /* Đậm thêm 50% */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -1410,7 +1556,8 @@ body {
   width: 24px !important;
   height: 24px !important;
   background: url('/images/doc.png') center center / cover no-repeat !important;
-  filter: brightness(0) invert(1) !important; /* Chuyển màu đen thành trắng */
+  filter: brightness(0) invert(1) !important;
+  /* Chuyển màu đen thành trắng */
 }
 
 /* Khung J12 */
@@ -1700,7 +1847,8 @@ body {
 }
 
 /* Form Styles for Modal */
-.edit-form, .add-form {
+.edit-form,
+.add-form {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -1739,7 +1887,8 @@ body {
   margin-bottom: 8px;
 }
 
-.form-input, .form-input-infor {
+.form-input,
+.form-input-infor {
   width: 100%;
   padding: 12px;
   border: 1px solid #ddd;
@@ -1748,12 +1897,14 @@ body {
   transition: border-color 0.3s;
 }
 
-.form-input:focus, .form-input-infor:focus {
+.form-input:focus,
+.form-input-infor:focus {
   outline: none;
   border-color: #007BFF;
 }
 
-.form-input.error, .form-input-infor.error {
+.form-input.error,
+.form-input-infor.error {
   border-color: #dc3545;
 }
 
@@ -1819,7 +1970,8 @@ body {
   gap: 20px;
 }
 
-.form-column1, .form-column2 {
+.form-column1,
+.form-column2 {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -1835,7 +1987,8 @@ body {
   gap: 15px;
 }
 
-.radio-item1, .radio-item2 {
+.radio-item1,
+.radio-item2 {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -2000,6 +2153,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -2010,6 +2164,7 @@ body {
     opacity: 0;
     transform: translateY(-20px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -2141,7 +2296,7 @@ body {
 }
 
 /* Error message next to label */
-.form-label + .error-message {
+.form-label+.error-message {
   display: inline-block;
   margin-left: 12px;
   margin-top: 0;

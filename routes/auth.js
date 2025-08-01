@@ -77,7 +77,12 @@ module.exports = (db) => {
           };
           
           console.log('Login successful for user:', results[0].username);
-          res.json({ success: true, message: 'Đăng nhập thành công!' });
+          res.json({ 
+            success: true, 
+            message: 'Đăng nhập thành công!',
+            role: results[0].role || 'USER',
+            redirectUrl: '/home'
+          });
         }
       );
     } catch (error) {
