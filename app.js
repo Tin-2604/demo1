@@ -29,7 +29,11 @@ app.use(bodyParser.json());
 app.use(session({
   secret: process.env.SESSION_SECRET || 'pickleball_secret',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  }
 }));
 
 // Middleware kiểm tra đăng nhập
@@ -63,9 +67,18 @@ const db = mysql.createConnection({
 // Test kết nối
 db.connect(err => {
   if (err) {
-    console.error('Lỗi kết nối MySQL:', err);
+    console.error('❌ Lỗi kết nối MySQL:', err.message);
+    console.error('🔧 Vui lòng kiểm tra:');
+    console.error('1. Biến môi trường DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT');
+    console.error('2. Railway database đã được cấu hình Public Network');
+    console.error('3. Firewall và network access');
+    
+    // Không exit process để app vẫn chạy được
+    // process.exit(1);
   } else {
-    console.log('Kết nối MySQL thành công!');
+    console.log('✅ Kết nối MySQL thành công!');
+    console.log(`📊 Database: ${process.env.DB_NAME || 'pickleball'}`);
+    console.log(`🌐 Host: ${process.env.DB_HOST || 'localhost'}`);
   }
 });
 
