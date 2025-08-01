@@ -1,0 +1,1966 @@
+/* CSS cho layout tổng thể */
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html, body {
+  height: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  background: #f0f0f0 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  min-height: 100vh !important;
+}
+
+.body-layout {
+  height: 1024px !important;
+  width: 1440px !important;
+  display: flex !important;
+  font-family: 'Montserrat', sans-serif !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+.main-content {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  height: 1024px !important;
+  padding: 0 !important;
+  background: url('/images/backgroundhome.png') center center / cover no-repeat !important;
+  position: relative !important;
+  margin: 0 !important;
+}
+
+.main-content h1 {
+  color: #fff !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 39px !important;
+  font-weight: 700 !important;
+  font-style: bold !important;
+  line-height: 120% !important;
+  letter-spacing: 0% !important;
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+  max-width: 56rem !important;
+}
+
+.main-content .content-area {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 16px !important;
+  padding: 0 !important;
+  color: #fff !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 18px !important;
+  text-align: center !important;
+  max-width: 800px !important;
+  width: 100% !important;
+}
+
+.main-content .content-area p {
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
+
+/* Admin Khung A */
+.admin-khung-a {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 1156px !important;
+  height: 1024px !important;
+  
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+/* Admin Khung A1 */
+.admin-khung-a1 {
+  position: absolute !important;
+  top: 24px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 365px !important;
+  height: 57px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.admin-khung-a1 h2 {
+  color: var(--Foundation-Yellow-Normal, #FFC107) !important;
+  font-size: 31px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+/* Admin Khung A2 */
+.admin-khung-a2 {
+  position: absolute !important;
+  top: 100px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 1092px !important;
+  height: 48px !important;
+  
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 32px !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin A2 */
+.admin-khung-a2-item {
+  width: 150px !important;
+  height: 48px !important;
+  background: #D9EBFF !important;
+  border-radius: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 20px !important;
+  color: #000 !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  transition: background-color 0.3s ease, font-weight 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-a2-item:hover {
+  background: #3399FF !important;
+  font-weight: bold !important;
+}
+
+.admin-khung-a2-item.active {
+  background: #007BFF !important;
+  color: #FFFFFF !important;
+  font-weight: bold !important;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Admin Khung K */
+.admin-khung-k {
+  position: absolute !important;
+  top: 169px !important; /* Đáy khung K cách đỉnh khung a3 đúng 32px */
+  left: 51% !important;
+  transform: translateX(-50%) !important;
+  width: 1092px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+.admin-khung-k1 {
+  position: absolute !important;
+  left: 24px !important;
+  width: 482px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-k1 span {
+  font-weight: normal !important;
+}
+
+.admin-khung-k2 {
+  position: absolute !important;
+  left: 562px !important;
+  width: 482px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-k2 span {
+  font-weight: normal !important;
+}
+
+/* Admin Khung A3 */
+.admin-khung-a3 {
+  position: absolute !important;
+  top: 236px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 1092px !important;
+  height: 535px !important;
+  
+  box-sizing: border-box !important;
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.admin-khung-a3::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Admin Khung B */
+.admin-khung-b {
+  position: absolute !important;
+  top: 16px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 39px !important;
+ 
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin B */
+.admin-khung-b0, .admin-khung-b1, .admin-khung-b2, .admin-khung-b3, .admin-khung-b4, .admin-khung-b5, .admin-khung-b6, .admin-khung-b7, .admin-khung-b8, .admin-khung-b9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: var(--foundation-yellow-light-active, #FFECB2) !important;
+  text-align: center !important;
+}
+
+.admin-khung-b1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+}
+.admin-khung-b2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-b3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+}
+.admin-khung-b4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+}
+.admin-khung-b5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+}
+.admin-khung-b6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+}
+.admin-khung-b7 { 
+  width: 172px !important; 
+  justify-content: center !important;
+}
+
+.admin-khung-b0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+}
+
+.admin-khung-b8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+}
+
+.admin-khung-b9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+}
+
+/* Admin Khung BB */
+.admin-khung-bb {
+  position: absolute !important;
+  top: 65px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung C */
+.admin-khung-c {
+  position: absolute !important;
+  top: 76px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin C */
+.admin-khung-c0, .admin-khung-c1, .admin-khung-c2, .admin-khung-c3, .admin-khung-c4, .admin-khung-c5, .admin-khung-c6, .admin-khung-c7, .admin-khung-c8, .admin-khung-c9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-c0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-c1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-c2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-c3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-c4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-c5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-c6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-c7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-c8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-c9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-c7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung C71 và C72 trong C7 */
+.admin-khung-c71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-c72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung CC */
+.admin-khung-cc {
+  position: absolute !important;
+  top: 134px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung D */
+.admin-khung-d {
+  position: absolute !important;
+  top: 145px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin D */
+.admin-khung-d0, .admin-khung-d1, .admin-khung-d2, .admin-khung-d3, .admin-khung-d4, .admin-khung-d5, .admin-khung-d6, .admin-khung-d7, .admin-khung-d8, .admin-khung-d9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-d0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-d1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-d2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-d3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-d4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-d5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-d6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-d7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-d8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-d9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-d7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung D71 và D72 trong D7 */
+.admin-khung-d71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-d72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung DD */
+.admin-khung-dd {
+  position: absolute !important;
+  top: 203px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung E */
+.admin-khung-e {
+  position: absolute !important;
+  top: 214px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin E */
+.admin-khung-e0, .admin-khung-e1, .admin-khung-e2, .admin-khung-e3, .admin-khung-e4, .admin-khung-e5, .admin-khung-e6, .admin-khung-e7, .admin-khung-e8, .admin-khung-e9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-e0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-e1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-e2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-e3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-e4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-e5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-e6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-e7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-e8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-e9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-e7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung E71 và E72 trong E7 */
+.admin-khung-e71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-e72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung EE */
+.admin-khung-ee {
+  position: absolute !important;
+  top: 272px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung F */
+.admin-khung-f {
+  position: absolute !important;
+  top: 283px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin F */
+.admin-khung-f0, .admin-khung-f1, .admin-khung-f2, .admin-khung-f3, .admin-khung-f4, .admin-khung-f5, .admin-khung-f6, .admin-khung-f7, .admin-khung-f8, .admin-khung-f9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-f0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-f1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-f2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-f3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-f4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-f5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-f6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-f7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-f8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-f9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-f7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung F71 và F72 trong F7 */
+.admin-khung-f71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-f72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung FF */
+.admin-khung-ff {
+  position: absolute !important;
+  top: 341px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung G */
+.admin-khung-g {
+  position: absolute !important;
+  top: 352px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin G */
+.admin-khung-g0, .admin-khung-g1, .admin-khung-g2, .admin-khung-g3, .admin-khung-g4, .admin-khung-g5, .admin-khung-g6, .admin-khung-g7, .admin-khung-g8, .admin-khung-g9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-g0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-g1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-g2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-g3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-g4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-g5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-g6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-g7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-g8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-g9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-g7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung G71 và G72 trong G7 */
+.admin-khung-g71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-g72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung GG */
+.admin-khung-gg {
+  position: absolute !important;
+  top: 410px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung H */
+.admin-khung-h {
+  position: absolute !important;
+  top: 421px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin H */
+.admin-khung-h0, .admin-khung-h1, .admin-khung-h2, .admin-khung-h3, .admin-khung-h4, .admin-khung-h5, .admin-khung-h6, .admin-khung-h7, .admin-khung-h8, .admin-khung-h9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-h0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-h1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-h2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-h3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-h4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-h5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-h6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-h7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-h8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-h9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-h7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung H71 và H72 trong H7 */
+.admin-khung-h71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-h72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung HH */
+.admin-khung-hh {
+  position: absolute !important;
+  top: 479px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung T */
+.admin-khung-t {
+  position: absolute !important;
+  top: 490px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin T */
+.admin-khung-t0, .admin-khung-t1, .admin-khung-t2, .admin-khung-t3, .admin-khung-t4, .admin-khung-t5, .admin-khung-t6, .admin-khung-t7, .admin-khung-t8, .admin-khung-t9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-t0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-t1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-t2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-t3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-t4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-t5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-t6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-t7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-t8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-t9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-t7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung T71 và T72 trong T7 */
+.admin-khung-t71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-t72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung TT */
+.admin-khung-tt {
+  position: absolute !important;
+  top: 548px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung X */
+.admin-khung-x {
+  position: absolute !important;
+  top: 559px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin X */
+.admin-khung-x0, .admin-khung-x1, .admin-khung-x2, .admin-khung-x3, .admin-khung-x4, .admin-khung-x5, .admin-khung-x6, .admin-khung-x7, .admin-khung-x8, .admin-khung-x9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-x0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-x1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-x2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-x3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-x4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-x5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-x6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-x7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-x8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-x9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-x7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung X71 và X72 trong X7 */
+.admin-khung-x71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-x72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung XX */
+.admin-khung-xx {
+  position: absolute !important;
+  top: 617px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung Y */
+.admin-khung-y {
+  position: absolute !important;
+  top: 628px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin Y */
+.admin-khung-y0, .admin-khung-y1, .admin-khung-y2, .admin-khung-y3, .admin-khung-y4, .admin-khung-y5, .admin-khung-y6, .admin-khung-y7, .admin-khung-y8, .admin-khung-y9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-y0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-y1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-y2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-y3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-y4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-y5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-y6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-y7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-y8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-y9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-y7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung Y71 và Y72 trong Y7 */
+.admin-khung-y71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-y72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung YY */
+.admin-khung-yy {
+  position: absolute !important;
+  top: 686px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 1px !important;
+  background: #FFFFFF !important;
+}
+
+/* Admin Khung Z */
+.admin-khung-z {
+  position: absolute !important;
+  top: 697px !important;
+  left: 0 !important;
+  width: 1565px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Các khung con trong Admin Z */
+.admin-khung-z0, .admin-khung-z1, .admin-khung-z2, .admin-khung-z3, .admin-khung-z4, .admin-khung-z5, .admin-khung-z6, .admin-khung-z7, .admin-khung-z8, .admin-khung-z9 {
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+}
+
+.admin-khung-z0 { 
+  width: 128px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-z1 { 
+  width: 96px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-z2 { 
+  width: 200px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-z3 { 
+  width: 133px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-z4 { 
+  width: 168px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-z5 { 
+  width: 144px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-z6 { 
+  width: 140px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+.admin-khung-z7 { 
+  width: 172px !important; 
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  justify-content: flex-start !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-z8 { 
+  width: 233px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-z9 { 
+  width: 182px !important; 
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.admin-khung-z7:hover {
+  background: #0056CC !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung Z71 và Z72 trong Z7 */
+.admin-khung-z71 {
+  position: absolute !important;
+  left: 18.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/navigation.png') center center / cover no-repeat !important;
+}
+
+.admin-khung-z72 {
+  position: absolute !important;
+  left: 52.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 101px !important;
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung J */
+.admin-khung-j {
+  position: absolute !important;
+  top: 870px !important;
+  left: 577px !important;
+  transform: translateX(-50%) !important;
+  width: 1092px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Admin Khung J1 */
+.admin-khung-j1 {
+  position: absolute !important;
+  left: 656px !important;
+  top: 0 !important;
+  width: 187px !important;
+  height: 48px !important;
+  background: var(--Foundation-Yellow-Normal, #FFC107) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-j1:hover {
+  background: var(--foundation-yellow-normal-hover, #0056CC) !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung J11 */
+.admin-khung-j11 {
+  position: absolute !important;
+  left: 24px !important;
+  top: 12px !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/doc.png') center center / cover no-repeat !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Admin Khung J12 */
+.admin-khung-j12 {
+  position: absolute !important;
+  left: 58px !important;
+  top: 12px !important;
+  width: 105px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+/* Image Modal Styles */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.image-modal-close:hover,
+.image-modal-close:focus {
+  color: #000;
+}
+
+#modalImage {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Admin Khung J2 */
+.admin-khung-j2 {
+  position: absolute !important;
+border-radius: 24px !important;
+  right: 0 !important;
+  top: 0 !important;
+  width: 230px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  background: var(--Foundation-Primary-Normal, #007BFF) !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.admin-khung-j2:hover {
+  background: var(--foundation-yellow-normal-hover, #0056CC) !important;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Admin Khung J21 */
+.admin-khung-j21 {
+  position: absolute !important;
+  left: 24px !important;
+  top: 12px !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: url('/images/doc.png') center center / cover no-repeat !important;
+  filter: brightness(0) invert(1) !important; /* Chuyển màu đen thành trắng */
+}
+
+/* Admin Khung J22 */
+.admin-khung-j22 {
+  position: absolute !important;
+  left: 58px !important;
+  top: 12px !important;
+  width: 148px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  border-radius: 24px !important;
+  color: var(--Foundation-Neutral---White-Light, #FFF) !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+/* Admin Khung M */
+.admin-khung-m {
+  position: absolute !important;
+  top: 800px !important; /* 20px phía trên khung J (900px - 20px) */
+  left: 577px !important;
+  transform: translateX(-50%) !important;
+  width: 1092px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Admin Khung M1 */
+.admin-khung-m1 {
+  position: absolute !important;
+  left: 1020px !important;
+  top: 10px !important;
+  width: 24px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Admin Khung M2 */
+.admin-khung-m2 {
+  position: absolute !important;
+  left: 1054px !important; /* 1020px + 24px + 10px */
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 38px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 20px !important;
+  font-weight: normal !important;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+}
+
+.popup {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.popup::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #007BFF, #0056CC);
+  border-radius: 14px;
+  z-index: -1;
+}
+
+.popup.success::before {
+  background: linear-gradient(45deg, #28a745, #1e7e34);
+}
+
+.popup.error::before {
+  background: linear-gradient(45deg, #dc3545, #c82333);
+}
+
+.popup-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+}
+
+.popup.success .popup-icon {
+  background: #28a745;
+}
+
+.popup.error .popup-icon {
+  background: #dc3545;
+}
+
+.popup-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.popup-message {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.popup-button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popup-button:hover {
+  background: #0056CC;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.popup-button:active {
+  transform: translateY(0);
+}
+
+/* Edit Selection Modal */
+.edit-selection-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-selection-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.edit-selection-header {
+  background: #007BFF;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-selection-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.edit-selection-close {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.edit-selection-close:hover {
+  opacity: 0.8;
+}
+
+.edit-selection-body {
+  padding: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.selection-categories {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 10px 20px;
+  border: 2px solid #007BFF;
+  background: white;
+  color: #007BFF;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background: #007BFF;
+  color: white;
+}
+
+.category-btn.active {
+  background: #007BFF;
+  color: white;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.player-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.player-card:hover {
+  border-color: #007BFF;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.player-info {
+  flex: 1;
+}
+
+.player-info h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.player-info p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.player-info strong {
+  color: #333;
+}
+
+.player-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.player-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,0 +1,147 @@
+/* CSS sidebar đồng bộ với dstd_admin.css */
+.body-layout {
+  width: 1440px !important;
+  height: 1024px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  position: relative !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.sidebar {
+  background: #fff !important;
+  width: 274px !important;
+  height: 1024px !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  padding: 40px 0 !important;
+  border-right: 1px solid #e5e7eb !important;
+  box-sizing: border-box !important;
+}
+
+.main-content {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  height: 1024px !important;
+  padding: 0 !important;
+  background: url('/images/backgroundhome.png') center center / cover no-repeat !important;
+  position: relative !important;
+  margin: 0 !important;
+}
+
+/* Đảm bảo không có margin/padding thừa ở body-layout, sidebar, main-content */
+.body-layout, .sidebar, .main-content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.user-avatar {
+  width: 64px !important;
+  height: 64px !important;
+  margin-bottom: 0rem !important;
+  margin-top: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name-user {
+  font-size: 20px !important;
+  color: #000 !important;
+  margin-bottom: 2rem !important;
+  margin-top: 45px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400 !important;
+  text-align: center;
+}
+
+.sidebar nav {
+  margin-top: 52px !important;
+  width: 100% !important;
+  margin-left: 50px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 50px !important;
+}
+
+.sidebar nav a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: #000 !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  font-family: 'Montserrat', sans-serif !important;
+  width: 285px;
+  height: 44px;
+  border-radius: 8px !important;
+  padding: -8px 12px !important;
+  transition: color 0.2s !important;
+}
+
+.sidebar nav a span {
+  flex: 1 0 0;
+  color: #000;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 20px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.sidebar nav a:hover {
+  color: #190aea;
+}
+
+.sidebar nav a.active {
+  color: #007BFF !important;
+  font-weight: bold !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  margin: -8px -12px !important;
+}
+
+.sidebar nav a.active svg path[stroke="black"] {
+  stroke: #007BFF !important;
+}
+
+.sidebar nav a.active span {
+  color: #007BFF !important;
+  font-weight: bold !important;
+}
+
+.sidebar nav a.active:hover {
+  color: #0056CC !important;
+}
+
+.sidebar nav a.active:hover svg path[stroke="black"] {
+  stroke: #0056CC !important;
+}
+
+.sidebar nav a.active:hover span {
+  color: #0056CC !important;
+}
+
+.sidebar .logo {
+  margin-top: auto !important;
+  padding: 20px 0 !important;
+  margin-top: 100px !important;
+}
+
+.sidebar .logo img {
+  width: 262px !important;
+  height: 262px !important;
+}

@@ -1,0 +1,738 @@
+/* Layout tổng thể */
+.form-layout {
+  height: 1024px;
+  display: flex;
+  background: white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Ẩn scrollbar cho toàn bộ trang */
+.form-layout::-webkit-scrollbar {
+  display: none;
+}
+
+.form-layout {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Sidebar styling moved to sidebar.css */
+
+/* Main content */
+.form-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  background-image: url('/images/backgroundhome.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 1024px;
+  overflow-y: auto;
+  margin: 0;
+}
+
+/* Ẩn scrollbar cho form-main */
+.form-main::-webkit-scrollbar {
+  display: none;
+}
+
+.form-main {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.form-container {
+  border-radius: 30px;
+  background: transparent;
+  backdrop-filter: blur(12.5px);
+  display: flex;
+  width: 944px;
+  height: 925px;
+  padding: 64px;  
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 38px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Ẩn scrollbar cho form-container */
+.form-container::-webkit-scrollbar {
+  display: none;
+}
+
+.form-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.form-title {
+  color: var(--Foundation-Yellow-Normal, #FFC107);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 31px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  align-self: stretch;
+  height: 37px;
+}
+
+
+.section-title{
+  display: flex;
+padding: 10px;
+align-items: center;
+gap: 10px;
+align-self: stretch;
+height: 50px;
+color: var(--foundation-yellow-light-active, #FFECB2);
+font-family: 'Montserrat', sans-serif;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 30px */
+flex: 1 0 0;
+width:796px;
+height:30px;
+margin-bottom: 32px;
+}
+.section-description{
+  width: 796px;
+  height:44px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  margin-top:-40px;
+  line-height: 120%;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+.form-label {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 19.2px */
+  text-align: left;
+  align-self: flex-start;
+}
+.form-input-infor {
+  width: 100%;
+  color:#ffffff;
+}
+
+.form-input {
+  width: 784px;
+  border-radius: 9999px;
+  height: 36px;
+  border: 1px solid #d1d5db;
+  background: transparent;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 224, 1);
+  align-self: flex-start;
+}
+
+.form-input:focus {
+  outline: none;
+  ring: 1px;
+  ring-color: #facc15;
+}
+
+.form-input::placeholder {
+  color: #d1d5db;
+}
+::placeholder {
+  color: #fff !important;
+  opacity: 1;
+
+/* Body 2 */
+font-family: Montserrat;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 15.6px */
+}
+
+input::placeholder {
+  color: #fff !important;
+  opacity: 1;
+}
+
+.form-input-infor::placeholder {
+  color: #fff !important;
+  opacity: 1;
+}
+.form-section{
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  width: 796px;
+  height: 290px;
+  margin: auto;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.radio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  width: 372px;
+}
+.radio-item1{
+  margin-right: 90px;
+}
+.radio-input {
+  accent-color: black;
+}
+
+/* Khi radio button được chọn, thay đổi màu chữ thành đen */
+.radio-item input[type="radio"]:checked + span {
+  color: #000 !important;
+  font-weight: 700;
+}
+
+/* Khi radio button được chọn, thay đổi màu của toàn bộ radio-item */
+.radio-item input[type="radio"]:checked {
+  accent-color: #000;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 48px;
+  align-self: stretch;
+}
+
+.submit-button {
+  border-radius: 24px;
+  background: var(--Foundation-Primary-Normal, #007BFF);
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 227px;
+  height: 48px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #1d4ed8;
+}
+.submit-button span{
+  color: var(--Foundation-Neutral---White-Light, #FFF);
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+.submit-button img{
+  width: 24px;
+  height: 24px;
+}
+
+/* Dynamic form styles */
+.dynamic-form {
+  border-radius: 20px;
+  margin-top: 24px;
+  color: #ffffff;
+  width: 911px;
+  min-height: 406px;
+  height: auto;
+}
+
+.dynamic-form-title {
+  text-transform: uppercase;
+  color: #ffffff;
+
+  /* Heading 5 */
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 30px */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+#athletes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.athlete-form {
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.athlete-title {
+  color: #ffffff;
+
+/* Subtitle */
+font-family: Montserrat;
+font-size: 20px;
+font-style: italic;
+font-weight: 400;
+line-height: 120%; /* 24px */
+align-self: flex-start;
+}
+
+.form-row {
+  display: flex;
+}
+.form-input-infor{
+  width: 350px;
+  border-radius: 9999px;
+  height: 36px;
+  border: 1px solid #d1d5db;
+  background: transparent;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 224, 1);
+}
+.form-column1 {
+margin-right: 150px;
+
+}
+
+.gender-options {
+  display: flex;
+  margin-top: 8px;
+}
+
+
+.upload-link {
+  color: #007BFF;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.upload-link:hover {
+  color: #0056b3;
+}
+
+.add-athlete-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-athlete-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+.add-athlete-btn span {
+  display: none;
+}
+.add-athlete-btn:focus,
+.add-athlete-btn:active,
+.add-athlete-btn:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+.remove-athlete-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+.remove-athlete-btn span {
+  display: none;
+}
+.remove-athlete-btn:focus,
+.remove-athlete-btn:active,
+.remove-athlete-btn:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-upload-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline;
+  text-decoration: none;
+  user-select: none;
+}
+.file-upload-btn:hover,
+.file-upload-btn:focus,
+.file-upload-btn:active {
+  color: #fff !important;
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.file-upload-btn i {
+  display: none;
+}
+
+.file-upload-btn:hover {
+  background: #0056b3;
+}
+
+/* File upload success state */
+.file-upload-btn.success {
+  color: #28a745 !important;
+  font-weight: 600;
+}
+
+/* File upload error state */
+.file-upload-btn.error {
+  color: #dc3545 !important;
+}
+
+.image-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.remove-image-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.remove-image-btn:hover {
+  background: #c82333;
+}
+
+.image-upload-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.image-upload-row .form-label {
+  margin-bottom: 0;
+}
+.image-upload-row .file-upload-btn {
+  margin-left: 12px;
+}
+.image-upload-row .error-message {
+  width: 100%;
+  margin-top: 4px;
+  margin-left: 0;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .form-layout {
+    flex-direction: column;
+  }
+  
+  .form-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .radio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Popup styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.popup {
+  animation: slideIn 0.3s ease;
+}
+
+.popup {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #007BFF, #0056b3);
+}
+
+.popup.success::before {
+  background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+.popup.error::before {
+  background: linear-gradient(90deg, #dc3545, #c82333);
+}
+
+.popup-icon {
+  font-size: 56px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+}
+
+.popup.success .popup-icon {
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+}
+
+.popup.error .popup-icon {
+  color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+}
+
+.popup-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #2c3e50;
+  letter-spacing: -0.5px;
+}
+
+.popup-message {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #5a6c7d;
+  margin-bottom: 24px;
+  line-height: 1.5;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.popup-button {
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  min-width: 120px;
+}
+
+.popup-button:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+.popup-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Error styles for form fields */
+.form-input.error,
+.form-input-infor.error {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+/* Error message next to label */
+.form-label + .error-message {
+  display: inline-block;
+  margin-left: 12px;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.error-message.show {
+  display: block;
+}
+
+/* Loading state for submit button */
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submit-button:disabled:hover {
+  background: var(--Foundation-Primary-Normal, #007BFF);
+}
+
+/* Đảm bảo background ảnh nền luôn hiển thị */
+.body-layout {
+  display: flex;
+  background: url('/images/backgroundhome.png') center center / cover no-repeat !important;
+}
+.main-content, .form-container {
+  background: transparent !important;
+}

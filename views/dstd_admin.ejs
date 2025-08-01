@@ -1,0 +1,627 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Danh sách thi đấu - Padel Tournament</title>
+    <link rel="stylesheet" href="/css/dstd_admin.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f0f0;
+    "
+  >
+    <div
+      class="body-layout"
+      style="width: 1440px; margin: 0 auto; display: flex; position: relative"
+    >
+      <%- include('sidebar', { currentPage: 'dstd_admin' }) %>
+      <!-- Main content -->
+      <main class="main-content">
+        <!-- Khung A -->
+        <div class="admin-khung-a">
+          <!-- Khung A1 -->
+          <div class="admin-khung-a1">
+            <h2>DANH SÁCH THI ĐẤU</h2>
+          </div>
+
+          <!-- Khung A2 -->
+          <div class="admin-khung-a2">
+            <div class="admin-khung-a2-item">7.5 tự do</div>
+            <div class="admin-khung-a2-item">6.5 tự do</div>
+            <div class="admin-khung-a2-item">5.5 trên 45t</div>
+            <div class="admin-khung-a2-item">5.5 dưới 45t</div>
+            <div class="admin-khung-a2-item">4.5 tự do</div>
+            <div class="admin-khung-a2-item">4.5 Đôi nữ</div>
+          </div>
+
+          <!-- Khung K -->
+          <div class="admin-khung-k">
+            <div class="admin-khung-k1">
+              Tổng số vận động viên: <span id="totalAthletes">0</span>
+            </div>
+            <div class="admin-khung-k2">
+              Tổng đội: <span id="totalTeams">0</span>
+            </div>
+          </div>
+
+          <!-- Khung A3 -->
+          <div class="admin-khung-a3">
+            <!-- Dữ liệu sẽ được load động từ JavaScript -->
+          </div>
+
+          <!-- Khung M -->
+          <!-- <div class="admin-khung-m">
+            <div class="admin-khung-m1">
+              <img src="/images/muiten.png" alt="muiten" width="24" height="24" />
+            </div>
+            <div class="admin-khung-m2">Sau</div>
+          </div> -->
+
+          <!-- Khung J -->
+          <div class="admin-khung-j">
+            <div class="admin-khung-j1" onclick="openEditSelection()">
+              <div class="admin-khung-j11"></div>
+              <div class="admin-khung-j12">Chỉnh sửa</div>
+            </div>
+            <div class="admin-khung-j2">
+              <div class="admin-khung-j21"></div>
+              <div class="admin-khung-j22">Xuất file Excel</div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Image Modal -->
+      <div id="imageModal" class="image-modal">
+        <div class="image-modal-content">
+          <span class="image-modal-close">&times;</span>
+          <img id="modalImage" src="" alt="Hình ảnh vận động viên" />
+        </div>
+      </div>
+
+      <!-- Popup Overlay -->
+      <div class="popup-overlay" id="popup-overlay">
+        <div class="popup" id="popup">
+          <div class="popup-icon" id="popup-icon"></div>
+          <div class="popup-title" id="popup-title"></div>
+          <div class="popup-message" id="popup-message"></div>
+          <button class="popup-button" onclick="closePopup()">Đóng</button>
+        </div>
+      </div>
+
+      <!-- Edit Selection Modal -->
+      <div id="editSelectionModal" class="edit-selection-modal">
+        <div class="edit-selection-content">
+          <div class="edit-selection-header">
+            <h2>Chọn VĐV để chỉnh sửa</h2>
+            <span class="edit-selection-close">&times;</span>
+          </div>
+
+          <div class="edit-selection-body">
+            <div class="selection-categories">
+              <button
+                class="category-btn active"
+                onclick="showCategoryPlayers('7.5-tu-do')"
+              >
+                7.5 tự do
+              </button>
+              <button
+                class="category-btn"
+                onclick="showCategoryPlayers('6.5-tu-do')"
+              >
+                6.5 tự do
+              </button>
+              <button
+                class="category-btn"
+                onclick="showCategoryPlayers('5.5-tren-45')"
+              >
+                5.5 trên 45t
+              </button>
+              <button
+                class="category-btn"
+                onclick="showCategoryPlayers('5.5-duoi-45')"
+              >
+                5.5 dưới 45t
+              </button>
+              <button
+                class="category-btn"
+                onclick="showCategoryPlayers('4.5-tu-do')"
+              >
+                4.5 tự do
+              </button>
+              <button
+                class="category-btn"
+                onclick="showCategoryPlayers('doi-nu-4.5')"
+              >
+                4.5 Đôi nữ
+              </button>
+            </div>
+
+            <div class="players-list" id="playersList">
+              <!-- Danh sách VĐV sẽ được load động -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const categoryItems = document.querySelectorAll(".admin-khung-a2-item");
+        const dataContainer = document.querySelector(".admin-khung-a3");
+
+        // Map category names to data attributes
+        const categoryMap = {
+          "7.5 tự do": "7.5-tu-do",
+          "6.5 tự do": "6.5-tu-do",
+          "5.5 trên 45t": "5.5-tren-45",
+          "5.5 dưới 45t": "5.5-duoi-45",
+          "4.5 tự do": "4.5-tu-do",
+          "4.5 Đôi nữ": "doi-nu-4.5",
+        };
+
+        // Add click event listeners to category items
+        categoryItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const selectedCategory = this.textContent.trim();
+            const categoryValue = categoryMap[selectedCategory];
+
+            // Remove active class from all items
+            categoryItems.forEach((cat) => cat.classList.remove("active"));
+
+            // Add active class to clicked item
+            this.classList.add("active");
+
+            // Load data for selected category
+            loadTournamentData(categoryValue);
+          });
+        });
+
+        function loadTournamentData(category) {
+          // Show loading state
+          dataContainer.innerHTML =
+            '<div style="color: white; text-align: center; padding: 20px;">Đang tải dữ liệu...</div>';
+
+          fetch(`/api/admin-tournament-data?category=${category || "all"}`)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                renderTournamentData(data.data);
+              } else {
+                dataContainer.innerHTML =
+                  '<div style="color: white; text-align: center; padding: 20px;">Lỗi tải dữ liệu</div>';
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              dataContainer.innerHTML =
+                '<div style="color: white; text-align: center; padding: 20px;">Lỗi kết nối</div>';
+            });
+        }
+
+        function renderTournamentData(data) {
+          if (!data || data.length === 0) {
+            dataContainer.innerHTML =
+              '<div style="color: white; text-align: center; padding: 20px;">Không có dữ liệu</div>';
+            // Update totals to 0 when no data
+            document.getElementById("totalAthletes").textContent = "0";
+            document.getElementById("totalTeams").textContent = "0";
+            return;
+          }
+
+          let html = `
+            <!-- Khung B -->
+            <div class="admin-khung-b">
+              <div class="admin-khung-b0">Nội dung</div>
+              <div class="admin-khung-b1">STT Đội</div>
+              <div class="admin-khung-b2">VĐV</div>
+              <div class="admin-khung-b3">Nick</div>
+              <div class="admin-khung-b4">Số điện thoại</div>
+              <div class="admin-khung-b5">Ngày sinh</div>
+              <div class="admin-khung-b6">Giới tính</div>
+              <div class="admin-khung-b7">Hình ảnh</div>
+              <div class="admin-khung-b8">Đội trưởng</div>
+              <div class="admin-khung-b9">Số điện thoại</div>
+            </div>
+
+            <!-- Khung BB -->
+            <div class="admin-khung-bb"></div>
+          `;
+
+          let rowCounter = 1;
+          data.forEach((registration, regIndex) => {
+            registration.players.forEach((player, playerIndex) => {
+              const isFirstPlayer = playerIndex === 0;
+
+              html += `
+                <!-- Khung Row ${rowCounter} -->
+                <div class="admin-khung-row-${rowCounter}">
+                  <div class="admin-khung-row-${rowCounter}-0">${getEventName(
+                player.category
+              )}</div>
+                  <div class="admin-khung-row-${rowCounter}-1">${
+                isFirstPlayer ? registration.registration_id : ""
+              }</div>
+                  <div class="admin-khung-row-${rowCounter}-2">${
+                player.full_name || "N/A"
+              }</div>
+                  <div class="admin-khung-row-${rowCounter}-3">${
+                player.nick_name || "N/A"
+              }</div>
+                  <div class="admin-khung-row-${rowCounter}-4">${
+                player.phone_number || "N/A"
+              }</div>
+                  <div class="admin-khung-row-${rowCounter}-5">${formatDate(
+                player.date_of_birth
+              )}</div>
+                  <div class="admin-khung-row-${rowCounter}-6">${
+                player.gender || "N/A"
+              }</div>
+                  <div class="admin-khung-row-${rowCounter}-7" onclick="showImage('${
+                player.avatar_path
+              }')">
+                    <div class="admin-khung-row-${rowCounter}-71"></div>
+                    <div class="admin-khung-row-${rowCounter}-72">Hình ảnh</div>
+                  </div>
+                  <div class="admin-khung-row-${rowCounter}-8">${
+                registration.leader_name || "N/A"
+              }</div>
+                  <div class="admin-khung-row-${rowCounter}-9">${
+                registration.leader_phone || "N/A"
+              }</div>
+                </div>
+
+                <!-- Khung Row ${rowCounter} Divider -->
+                <div class="admin-khung-row-${rowCounter}-divider"></div>
+              `;
+
+              rowCounter++;
+            });
+          });
+
+          dataContainer.innerHTML = html;
+
+          // Tạo CSS động cho các khung mới
+          createDynamicCSS(rowCounter - 1);
+
+          // Update totals
+          const totalTeams = data.length;
+          const totalAthletes = data.reduce(
+            (sum, registration) => sum + registration.players.length,
+            0
+          );
+
+          document.getElementById("totalAthletes").textContent = totalAthletes;
+          document.getElementById("totalTeams").textContent = totalTeams;
+        }
+
+        function createDynamicCSS(maxRows) {
+          // Xóa CSS cũ nếu có
+          const oldStyle = document.getElementById("dynamic-css");
+          if (oldStyle) {
+            oldStyle.remove();
+          }
+
+          // Tạo style element mới
+          const style = document.createElement("style");
+          style.id = "dynamic-css";
+
+          let css = "";
+
+          // Tạo CSS cho các khung từ 1 đến maxRows
+          for (let i = 1; i <= maxRows; i++) {
+            const topPosition = 76 + (i - 1) * 58; // 76px cho row đầu tiên, mỗi row cách nhau 58px
+
+            css += `
+              /* Admin Khung Row ${i} */
+              .admin-khung-row-${i} {
+                position: absolute !important;
+                top: ${topPosition}px !important;
+                left: 0 !important;
+                width: 1565px !important;
+                height: 48px !important;
+                display: flex !important;
+                align-items: center !important;
+                box-sizing: border-box !important;
+              }
+
+              /* Các khung con trong Admin Row ${i} */
+              .admin-khung-row-${i}-0, .admin-khung-row-${i}-1, .admin-khung-row-${i}-2, .admin-khung-row-${i}-3, .admin-khung-row-${i}-4, .admin-khung-row-${i}-5, .admin-khung-row-${i}-6, .admin-khung-row-${i}-7, .admin-khung-row-${i}-8, .admin-khung-row-${i}-9 {
+                height: 39px !important;
+                display: flex !important;
+                align-items: center !important;
+                font-size: 16px !important;
+                font-weight: normal !important;
+                color: #FFFFFF !important;
+              }
+
+              .admin-khung-row-${i}-0 { 
+                width: 128px !important; 
+                justify-content: center !important;
+                text-align: center !important;
+              }
+
+              .admin-khung-row-${i}-1 { 
+                width: 96px !important; 
+                justify-content: center !important;
+                text-align: center !important;
+              }
+              .admin-khung-row-${i}-2 { 
+                width: 200px !important; 
+                justify-content: center !important;
+                text-align: center !important;
+              }
+              .admin-khung-row-${i}-3 { 
+                width: 133px !important; 
+                justify-content: center !important;
+                text-align: center !important;
+              }
+              .admin-khung-row-${i}-4 { 
+                width: 168px !important; 
+                justify-content: center !important;
+                text-align: center !important;
+              }
+              .admin-khung-row-${i}-5 { 
+                width: 144px !important; 
+                justify-content: center !important;
+                text-align: center !important;
+              }
+              .admin-khung-row-${i}-6 { 
+                width: 140px !important; 
+                justify-content: center !important;
+                text-align: center !important;
+              }
+              .admin-khung-row-${i}-7 { 
+                width: 172px !important; 
+                background: var(--Foundation-Primary-Normal, #007BFF) !important;
+                border-radius: 24px !important;
+                position: relative !important;
+                justify-content: flex-start !important;
+                transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+                cursor: pointer !important;
+              }
+
+              .admin-khung-row-${i}-8 { 
+                width: 233px !important; 
+                justify-content: center !important;
+                text-align: center !important;
+              }
+
+              .admin-khung-row-${i}-9 { 
+                width: 182px !important; 
+                justify-content: center !important;
+                text-align: center !important;
+              }
+
+              .admin-khung-row-${i}-7:hover {
+                background: #0056CC !important;
+                box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+              }
+
+              /* Admin Khung Row ${i} 71 và 72 trong Row ${i} 7 */
+              .admin-khung-row-${i}-71 {
+                position: absolute !important;
+                left: 18.5px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                width: 24px !important;
+                height: 24px !important;
+                background: url('/images/navigation.png') center center / cover no-repeat !important;
+              }
+
+              .admin-khung-row-${i}-72 {
+                position: absolute !important;
+                left: 52.5px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                width: 101px !important;
+                height: 19px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                color: #FFFFFF !important;
+                font-size: 16px !important;
+                font-weight: bold !important;
+              }
+
+              /* Admin Khung Row ${i} Divider */
+              .admin-khung-row-${i}-divider {
+                position: absolute !important;
+                top: ${topPosition + 58}px !important;
+                left: 0 !important;
+                width: 1565px !important;
+                height: 1px !important;
+                background: #FFFFFF !important;
+              }
+            `;
+          }
+
+          style.textContent = css;
+          document.head.appendChild(style);
+        }
+
+        function getEventName(category) {
+          const eventNames = {
+            "7.5-tu-do": "7.5 tự do",
+            "6.5-tu-do": "6.5 tự do",
+            "5.5-tren-45": "5.5 trên 45t",
+            "5.5-duoi-45": "5.5 dưới 45t",
+            "4.5-tu-do": "4.5 tự do",
+            "doi-nu-4.5": "4.5 Đôi nữ",
+          };
+          return eventNames[category] || "N/A";
+        }
+
+        function formatDate(dateString) {
+          if (!dateString) return "N/A";
+          const date = new Date(dateString);
+          return date.toLocaleDateString("vi-VN");
+        }
+
+        // Load data for first category by default
+        if (categoryItems.length > 0) {
+          categoryItems[0].classList.add("active");
+          loadTournamentData(categoryMap[categoryItems[0].textContent.trim()]);
+        }
+      });
+
+      // Image modal functions
+      function showImage(imagePath) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        modalImg.src = `/uploads/${imagePath}`;
+        modal.style.display = "flex";
+      }
+
+      // Close modal when clicking on X
+      document.querySelector(".image-modal-close").onclick = function () {
+        document.getElementById("imageModal").style.display = "none";
+      };
+
+      // Close modal when clicking outside
+      document.getElementById("imageModal").onclick = function (e) {
+        if (e.target === this) {
+          this.style.display = "none";
+        }
+      };
+
+      // Edit Selection Modal Functions
+      function openEditSelection() {
+        document.getElementById("editSelectionModal").style.display = "flex";
+        showCategoryPlayers("7.5-tu-do"); // Load category đầu tiên
+      }
+
+      function closeEditSelection() {
+        document.getElementById("editSelectionModal").style.display = "none";
+      }
+
+      function showCategoryPlayers(category) {
+        // Update active button
+        document
+          .querySelectorAll(".category-btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Load players for selected category
+        fetch(`/api/admin-tournament-data?category=${category}`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              renderPlayersList(data.data, category);
+            } else {
+              document.getElementById("playersList").innerHTML =
+                "<p>Không có dữ liệu</p>";
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            document.getElementById("playersList").innerHTML =
+              "<p>Lỗi tải dữ liệu</p>";
+          });
+      }
+
+      function renderPlayersList(data, category) {
+        const playersList = document.getElementById("playersList");
+
+        if (!data || data.length === 0) {
+          playersList.innerHTML = "<p>Không có VĐV nào trong danh mục này</p>";
+          return;
+        }
+
+        let html = '<div class="players-grid">';
+
+        data.forEach((registration, regIndex) => {
+          registration.players.forEach((player, playerIndex) => {
+            const isFirstPlayer = playerIndex === 0;
+            const teamId = registration.registration_id;
+            const leaderName = registration.leader_name || "N/A";
+            const leaderPhone = registration.leader_phone || "N/A";
+
+            html += `
+              <div class="player-card" onclick="selectPlayerForEdit('${category}', '${teamId}', '${
+              player.full_name
+            }', '${player.nick_name}', '${player.phone_number}', '${
+              player.date_of_birth
+            }', '${player.gender}', '${
+              player.avatar_path
+            }', '${leaderName}', '${leaderPhone}')">
+                <div class="player-info">
+                  <h4>${player.full_name || "N/A"}</h4>
+                  <p><strong>Nick:</strong> ${player.nick_name || "N/A"}</p>
+                  <p><strong>SĐT:</strong> ${player.phone_number || "N/A"}</p>
+                  <p><strong>Đội trưởng:</strong> ${leaderName}</p>
+                  <p><strong>STT Đội:</strong> ${teamId}</p>
+                </div>
+                <div class="player-avatar">
+                  <img src="/uploads/${
+                    player.avatar_path
+                  }" alt="Avatar" onerror="this.src='/images/default-avatar.png'">
+                </div>
+              </div>
+            `;
+          });
+        });
+
+        html += "</div>";
+        playersList.innerHTML = html;
+      }
+
+      function selectPlayerForEdit(
+        category,
+        teamId,
+        fullName,
+        nickName,
+        phone,
+        birthDate,
+        gender,
+        avatarPath,
+        leaderName,
+        leaderPhone
+      ) {
+        // Chuyển hướng đến form đăng ký với dữ liệu đã chọn
+        const formData = {
+          category: category,
+          teamId: teamId,
+          fullName: fullName,
+          nickName: nickName,
+          phone: phone,
+          birthDate: birthDate,
+          gender: gender,
+          avatarPath: avatarPath,
+          leaderName: leaderName,
+          leaderPhone: leaderPhone,
+        };
+
+        // Lưu dữ liệu vào localStorage để form có thể đọc
+        localStorage.setItem("editPlayerData", JSON.stringify(formData));
+
+        // Chuyển hướng đến trang form (admin)
+        window.location.href = "/form?edit=true&admin=true";
+      }
+
+      // Close edit selection modal when clicking on X
+      document.querySelector(".edit-selection-close").onclick = function () {
+        closeEditSelection();
+      };
+
+      // Close edit selection modal when clicking outside
+      document.getElementById("editSelectionModal").onclick = function (e) {
+        if (e.target === this) {
+          closeEditSelection();
+        }
+      };
+    </script>
+  </body>
+</html>

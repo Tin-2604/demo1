@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Đăng ký tài khoản</title>
+  <link rel="stylesheet" href="/css/register.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Pickleball logo at bottom-right corner -->
+  <div class="pickleball-logo"></div>
+  
+  <div class="register-container">
+    <!-- Back arrow button -->
+    <svg class="back-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M15 18L9 12L15 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    
+    <div class="register-banner">ĐĂNG KÝ</div>
+    <div class="register-main-box">
+      <div class="register-main-header">Username</div>
+      <div class="register-main-username-box">
+        <input type="text" name="username" class="register-main-username-inner" placeholder="Nhập username" required>
+      </div>
+              <div class="register-form-content">
+          <div id="message-popup" class="message-popup" style="display: none;">
+            <div class="message-content">
+              <span id="message-text"></span>
+              <button onclick="closeMessage()" class="message-close">OK</button>
+            </div>
+          </div>
+        <form method="POST" action="/register" onsubmit="return false;">
+          <input type="hidden" name="username" id="hidden-username">
+          <div class="register-label">Số điện thoại</div>
+          <input type="text" name="phone_number" placeholder="Nhập số điện thoại" required>
+          <div class="register-label">Mật khẩu</div>
+          <input type="password" name="password" placeholder="Nhập mật khẩu" required>
+          <div class="register-label">Nhập lại mật khẩu</div>
+          <input type="password" name="confirm_password" placeholder="Nhập lại mật khẩu" required>
+        </form>
+        <div class="register-login-row">
+          <span class="register-login-text">Đã có tài khoản?</span>
+          <a href="/login" class="register-login-link">Đăng nhập ngay</a>
+        </div>
+      </div>
+    </div>
+    <button class="register-bottom-btn" onclick="submitForm()">
+      <span class="register-bottom-btn-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 25 24" fill="none">
+          <path d="M3.5 11L22.5 2L13.5 21L11.5 13L3.5 11Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="register-bottom-btn-text">Đăng ký ngay</span>
+    </button>
+  </div>
+
+  <script>
+    // Ngăn form submit khi nhấn Enter
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitForm();
+      });
+    });
+    
+    function showMessage(message) {
+      document.getElementById('message-text').textContent = message;
+      document.getElementById('message-popup').style.display = 'flex';
+    }
+    
+    function closeMessage() {
+      document.getElementById('message-popup').style.display = 'none';
+    }
+    
+    function submitForm() {
+      const username = document.querySelector('input[name="username"]').value.trim();
+      const phoneNumber = document.querySelector('input[name="phone_number"]').value.trim();
+      const password = document.querySelector('input[name="password"]').value;
+      const confirmPassword = document.querySelector('input[name="confirm_password"]').value;
+      
+      // Validate username >= 2 ký tự và chỉ chữ cái
+      if (username.length < 2) {
+        showMessage('Tên phải có ít nhất 2 ký tự!');
+        return;
+      }
+      if (!/^[\p{L}\s]+$/u.test(username)) {
+        showMessage('Tên chỉ được chứa chữ cái và dấu cách!');
+        return;
+      }
+      // Validate phone 10-11 số
+      if (!/^\d{10,11}$/.test(phoneNumber)) {
+        showMessage('Số điện thoại phải có 10-11 số!');
+        return;
+      }
+      // Validate password: chữ cái, số, ký tự đặc biệt
+      if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{6,}$/.test(password)) {
+        showMessage('Mật khẩu phải có chữ cái, số và ký tự đặc biệt, tối thiểu 6 ký tự!');
+        return;
+      }
+      if (!username || !phoneNumber || !password || !confirmPassword) {
+        showMessage('Vui lòng nhập đầy đủ thông tin!');
+        return;
+      }
+      if (password !== confirmPassword) {
+        showMessage('Mật khẩu nhập lại không khớp!');
+        return;
+      }
+      // Tạo form data và gửi bằng fetch
+      const formData = new URLSearchParams();
+      formData.append('username', username);
+      formData.append('phone_number', phoneNumber);
+      formData.append('password', password);
+      formData.append('confirm_password', confirmPassword);
+      fetch('/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        showMessage(data.message);
+        if (data.success) {
+          document.querySelector('input[name="username"]').value = '';
+          document.querySelector('input[name="phone_number"]').value = '';
+          document.querySelector('input[name="password"]').value = '';
+          document.querySelector('input[name="confirm_password"]').value = '';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        showMessage('Có lỗi xảy ra!');
+      });
+    }
+  </script>
+</body>
+</html> 

@@ -1,0 +1,372 @@
+body {
+  width: 1440px;
+  height: 1024px;
+  margin: 0 auto;
+  background: url('/images/resigter-banner.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Montserrat', Arial, sans-serif;
+  position: relative;
+}
+
+.pickleball-logo {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: url('/images/logo-pickleball.png') 50% / cover no-repeat;
+  width: 262px;
+  height: 262px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  z-index: 100;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 736px;
+  height: 609px;
+  padding: 32px 64px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: #FFF;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  font-family: 'Montserrat', Arial, sans-serif;
+  position: relative;
+}
+
+.back-arrow {
+  position: absolute;
+  left: 31px;
+  top: 32px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.back-arrow:hover {
+  opacity: 0.7;
+}
+
+.register-banner {
+  width: 170px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 31px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  color: #000;
+}
+
+.register-container h2 {
+  margin-bottom: 24px;
+  color: #222;
+}
+
+.register-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.register-container input[type="text"],
+.register-container input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.register-container button {
+  width: 100%;
+  padding: 12px;
+  background: #2d8cf0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background 0.2s;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.register-container button:hover {
+  background: #1a73e8;
+}
+
+.register-container a {
+  color: #2d8cf0;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.register-container p {
+  margin: 0 0 12px 0;
+}
+
+.register-bottom-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 227px !important;
+  height: 48px;
+  padding: 0;
+  border-radius: 24px !important;
+  background: var(--Foundation-Primary-Normal, #007BFF);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: auto;
+  margin-bottom: 0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: center;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.register-bottom-btn-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-bottom-btn-text {
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.register-bottom-btn:hover {
+  background: #0056b3;
+}
+
+.register-form-content {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-form-content form {
+  width: 100%;
+}
+
+.register-form-content input[type="text"],
+.register-form-content input[type="password"] {
+  width: 100%;
+  height: 36px;
+  border-radius: 32px;
+  border: 1px solid #666;
+  opacity: 0.8;
+  background: #fff;
+  padding-left: 16px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 13px;
+  color: #666;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.register-main-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.register-main-header {
+  width: 100%;
+  height: 19.2px;
+  flex: 1 0 0;
+  color: #333;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 24px;
+  margin-bottom: 0;
+}
+
+.register-main-username-box {
+  width: 100%;
+  height: auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  box-shadow: none;
+  padding: 0;
+}
+
+.register-main-username-inner {
+  width: 100% !important;
+  height: 36px !important;
+  border-radius: 32px !important;
+  -webkit-border-radius: 32px !important;
+  border: 1px solid #666 !important;
+  opacity: 0.8 !important;
+  background: #fff !important;
+  padding-left: 16px !important;
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-size: 13px !important;
+  color: #666 !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 120% !important;
+  box-sizing: border-box !important;
+  margin-bottom: 16px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+}
+
+.register-main-username-label {
+  color: #666;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.register-form-content label {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: #333;
+  line-height: 120%;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.register-form-content input[type="text"]:first-of-type {
+  margin-top: 0px;
+}
+
+.register-label {
+  flex: 1 0 0;
+  color: #333;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 10px;
+}
+
+.register-login-text {
+  color: #000;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.register-login-text, .register-login-link {
+  display: inline;
+}
+
+.register-login-link {
+  color: #000 !important;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  text-decoration-line: underline !important; 
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.register-login-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* Message Popup Styles */
+.message-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.message-content {
+  background: #333;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.message-close {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.message-close:hover {
+  background: #45a049;
+}

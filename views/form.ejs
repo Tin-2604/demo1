@@ -1,0 +1,789 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Pickleball Registration</title>
+  <link rel="stylesheet" href="/css/form.css"/>
+  <link rel="stylesheet" href="/css/sidebar.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+ </head>
+ <body style="min-height:100vh; display:flex; justify-content:center; background:#f0f0f0; margin:0;">
+  <div class="body-layout" style="width:1440px; height:1024px; margin:0 auto; display:flex; position:relative; background: url('/images/backgroundhome.png') center center / cover no-repeat;">
+    <%- include('sidebar', { currentPage: 'form' }) %>
+    <main class="main-content">
+      <div class="form-container">
+        <form id="registration-form" action="/tournament/register" method="POST" enctype="multipart/form-data">
+          <h1 class="form-title">ĐĂNG KÝ GIẢI ĐẤU PICKLE BALL</h1>
+          <section class="form-section">
+            <h2 class="section-title">THÔNG TIN ĐỘI TRƯỞNG:</h2>
+            <label class="form-label" for="fullname">Họ và tên (*)</label>
+            <div class="error-message" id="fullname-error"></div>
+            <input class="form-input" id="fullname" name="fullname" placeholder="Nhập họ và tên" type="text"/>
+            
+            <label class="form-label" for="phone">Số điện thoại (*)</label>
+            <div class="error-message" id="phone-error"></div>
+            <input class="form-input" id="phone" name="phone" placeholder="Nhập số điện thoại" type="text"/>
+          </section>
+          <section class="form-section">
+            <h2 class="section-title">ĐĂNG KÝ GIẢI ĐẤU:</h2>
+            <p class="section-description">Chọn nội dung giải đấu (chỉ chọn 1):</p>
+            <div class="radio-grid">
+              <label class="radio-item">
+                <input class="radio-input" name="category" type="radio" value="7.5-tu-do"/>
+                <span>7.5 tự do</span>
+              </label>
+              <label class="radio-item">
+                <input class="radio-input" name="category" type="radio" value="5.5-duoi-45"/>
+                <span>5.5 dưới 45 tuổi</span>
+              </label>
+              <label class="radio-item">
+                <input class="radio-input" name="category" type="radio" value="6.5-tu-do"/>
+                <span>6.5 tự do</span>
+              </label>
+              <label class="radio-item">
+                <input class="radio-input" name="category" type="radio" value="4.5-tu-do"/>
+                <span>4.5 tự do</span>
+              </label>
+              <label class="radio-item">
+                <input class="radio-input" name="category" type="radio" value="5.5-tren-45"/>
+                <span>5.5 trên 45 tuổi</span>
+              </label>
+              <label class="radio-item">
+                <input class="radio-input" name="category" type="radio" value="doi-nu-4.5"/>
+                <span>Đôi nữ 4.5</span>
+              </label>
+            </div>
+            <div class="error-message" id="category-error"></div>
+          </section>
+
+          <!-- Dynamic form container -->
+          <div id="dynamic-form" class="dynamic-form" style="display: none;">
+            <h3 class="dynamic-form-title">NỘI DUNG <span id="category-name"></span>:</h3>
+            <div id="athletes-container">
+              <div class="athlete-form" data-athlete="1">
+                <h4 class="athlete-title">Vận động viên 1:</h4>
+                <div class="form-row">
+                  <div class="form-column1">
+                    <label class="form-label" for="fullname1">Họ và tên (*)</label>
+                    <input class="form-input-infor" id="fullname1" name="full_name[]" placeholder="Nhập họ và tên" type="text"/>
+                    <div class="error-message" id="fullname1-error"></div>
+                    
+                    <div class="form-group">
+                      <label class="form-label" for="birthdate1">Ngày sinh</label>
+                      <input class="form-input-infor" id="birthdate1" name="date_of_birth[]" placeholder="dd/mm/yyyy" type="date"/>
+                      <div class="error-message" id="birthdate1-error"></div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Giới tính</label>
+                      <div class="gender-options">
+                        <label class="radio-item1">
+                          <input class="radio-input" name="gender[0]" type="radio" value="nam"/>
+                          <span>Nam</span>
+                        </label>
+                        <label class="radio-item2">
+                          <input class="radio-input" name="gender[0]" type="radio" value="nu"/>
+                          <span>Nữ</span>
+                        </label>
+                      </div>
+                      <div class="error-message" id="gender1-error"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-column2">
+                    <label class="form-label" for="phone1">Số điện thoại (*)</label>
+                    <input class="form-input-infor" id="phone1" name="phone_number[]" placeholder="Nhập số điện thoại" type="text"/>
+                    <div class="error-message" id="phone1-error"></div>
+                    
+                    <div class="form-group">
+                      <label class="form-label" for="nick1">Nick</label>
+                      <input class="form-input-infor" id="nick1" name="nick_name[]" placeholder="Nhập nick" type="text"/>
+                    </div>
+                    
+                    <div class="form-group image-upload-row">
+                      <label class="form-label" for="image1" style="margin-bottom:0;">Hình ảnh (*)</label>
+                      <input type="file" id="image1" name="avatar[]" class="file-input" accept="image/*" style="display: none;">
+                      <label for="image1" class="file-upload-btn" style="margin-left:12px;text-decoration-line: underline;">Tải ảnh lên</label>
+                      <div class="error-message" id="image1-error"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="add-athlete-section">
+              <button type="button" class="add-athlete-btn" id="add-athlete-btn" aria-label="Thêm vận động viên">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="submit-button" type="submit">
+              <img src="/images/navigation.png" alt="navigation" class="submit-icon">
+              <span>Đăng ký ngay</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Popup Overlay -->
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup" id="popup">
+      <div class="popup-icon" id="popup-icon"></div>
+      <div class="popup-title" id="popup-title"></div>
+      <div class="popup-message" id="popup-message"></div>
+      <button class="popup-button" onclick="closePopup()">Đóng</button>
+    </div>
+  </div>
+
+  <script>
+    // Validation functions
+    function validateName(name) {
+      if (!name || name.trim().length < 2) {
+        return 'Họ và tên phải có ít nhất 2 ký tự';
+      }
+      if (!/^[a-zA-ZÀ-ỹ\s]+$/.test(name.trim())) {
+        return 'Họ và tên chỉ được chứa chữ cái';
+      }
+      return null;
+    }
+
+    function validatePhone(phone) {
+      if (!phone) {
+        return 'Số điện thoại là bắt buộc';
+      }
+      const phoneRegex = /^[0-9]{10,11}$/;
+      if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
+        return 'Số điện thoại phải có 10-11 chữ số';
+      }
+      return null;
+    }
+
+    function validateDateOfBirth(date, category) {
+      if (!date) {
+        if (category === '5.5-tren-45' || category === '5.5-duoi-45') {
+          return 'Ngày sinh là bắt buộc cho nội dung này';
+        }
+        return null;
+      }
+
+      const selectedDate = new Date(date);
+      const today = new Date();
+      
+      // Không cho phép chọn ngày hiện tại hoặc tương lai
+      if (selectedDate >= today) {
+        return 'Ngày sinh phải là ngày trong quá khứ';
+      }
+
+      if (category === '5.5-tren-45') {
+        const cutoffDate = new Date('1979-01-01');
+        if (selectedDate >= cutoffDate) {
+          return 'Phải sinh trước năm 1979 để đăng ký nội dung 5.5 trên 45 tuổi';
+        }
+      }
+
+      if (category === '5.5-duoi-45') {
+        const cutoffDate = new Date('1979-01-01');
+        if (selectedDate < cutoffDate) {
+          return 'Phải sinh từ năm 1979 trở lại để đăng ký nội dung 5.5 dưới 45 tuổi';
+        }
+      }
+
+      return null;
+    }
+
+    function validateGender(gender, category) {
+      if (category === 'doi-nu-4.5' && gender !== 'nu') {
+        return 'Giới tính phải là Nữ cho nội dung đôi nữ 4.5';
+      }
+      return null;
+    }
+
+    function validateImage(file) {
+      if (!file || file.size === 0) {
+        return 'Hình ảnh là bắt buộc';
+      }
+      return null;
+    }
+
+    function showError(inputId, message) {
+      const input = document.getElementById(inputId);
+      const errorDiv = document.getElementById(inputId + '-error');
+      
+      if (input) {
+        input.classList.add('error');
+      }
+      if (errorDiv) {
+        errorDiv.textContent = message;
+        errorDiv.classList.add('show');
+      }
+    }
+
+    function clearError(inputId) {
+      const input = document.getElementById(inputId);
+      const errorDiv = document.getElementById(inputId + '-error');
+      
+      if (input) {
+        input.classList.remove('error');
+      }
+      if (errorDiv) {
+        errorDiv.textContent = '';
+        errorDiv.classList.remove('show');
+      }
+    }
+
+    function showPopup(type, title, message) {
+      const overlay = document.getElementById('popup-overlay');
+      const popup = document.getElementById('popup');
+      const icon = document.getElementById('popup-icon');
+      const popupTitle = document.getElementById('popup-title');
+      const popupMessage = document.getElementById('popup-message');
+
+      popup.className = `popup ${type}`;
+      icon.className = `popup-icon fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}`;
+      popupTitle.textContent = title;
+      popupMessage.innerHTML = message; // Use innerHTML to support HTML tags
+      overlay.style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup-overlay').style.display = 'none';
+    }
+
+    // Check for success parameter in URL - only show if it's a fresh page load
+    let hasShownSuccessPopup = false;
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success') === '1' && !hasShownSuccessPopup) {
+        hasShownSuccessPopup = true;
+        showPopup('success', 'Thành công!', 'Đăng ký giải đấu đã được gửi thành công.');
+        // Clear the URL parameter after showing popup
+        const newUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if this is edit mode
+      const urlParams = new URLSearchParams(window.location.search);
+      const isEditMode = urlParams.get('edit') === 'true';
+      
+      if (isEditMode) {
+        loadEditData();
+        // Change submit button text for edit mode
+        const submitButton = document.querySelector('.submit-button span');
+        if (submitButton) {
+          submitButton.textContent = 'Cập nhật thông tin';
+        }
+      }
+      
+      const radioInputs = document.querySelectorAll('input[name="category"]');
+      const dynamicForm = document.getElementById('dynamic-form');
+      const categoryName = document.getElementById('category-name');
+      const addAthleteBtn = document.getElementById('add-athlete-btn');
+      const athletesContainer = document.getElementById('athletes-container');
+      const form = document.getElementById('registration-form');
+      
+      let athleteCount = 1;
+      
+      const categoryLabels = {
+        '7.5-tu-do': '7.5',
+        '5.5-duoi-45': '5.5 dưới 45 tuổi',
+        '6.5-tu-do': '6.5',
+        '4.5-tu-do': '4.5',
+        '5.5-tren-45': '5.5 trên 45 tuổi',
+        'doi-nu-4.5': 'Đôi nữ 4.5'
+      };
+      
+      function loadEditData() {
+        const editData = localStorage.getItem('editPlayerData');
+        if (editData) {
+          try {
+            const data = JSON.parse(editData);
+            
+            // Fill team leader information
+            document.getElementById('fullname').value = data.leaderName || '';
+            document.getElementById('phone').value = data.leaderPhone || '';
+            
+            // Select category
+            const categoryRadio = document.querySelector(`input[name="category"][value="${data.category}"]`);
+            if (categoryRadio) {
+              categoryRadio.checked = true;
+              categoryRadio.dispatchEvent(new Event('change'));
+            }
+            
+            // Fill athlete information
+            setTimeout(() => {
+              const fullnameInput = document.getElementById('fullname1');
+              const nickInput = document.getElementById('nick1');
+              const phoneInput = document.getElementById('phone1');
+              const birthdateInput = document.getElementById('birthdate1');
+              const genderRadios = document.querySelectorAll('input[name="gender[0]"]');
+              
+              if (fullnameInput) fullnameInput.value = data.fullName || '';
+              if (nickInput) nickInput.value = data.nickName || '';
+              if (phoneInput) phoneInput.value = data.phone || '';
+              if (birthdateInput) birthdateInput.value = data.birthDate || '';
+              
+              // Select gender
+              if (data.gender) {
+                genderRadios.forEach(radio => {
+                  if (radio.value === data.gender) {
+                    radio.checked = true;
+                  }
+                });
+              }
+            }, 100);
+            
+            // Store team ID for update
+            if (data.teamId) {
+              localStorage.setItem('editTeamId', data.teamId);
+            }
+            
+            // Clear edit data but keep team ID
+            localStorage.removeItem('editPlayerData');
+            
+          } catch (error) {
+            console.error('Error parsing edit data:', error);
+          }
+        }
+      }
+ 
+      function updateBirthdateLabels(selectedValue) {
+        const isRequired = selectedValue === '5.5-tren-45' || selectedValue === '5.5-duoi-45';
+        const athleteForms = document.querySelectorAll('.athlete-form');
+        athleteForms.forEach((form, idx) => {
+          const label = form.querySelector(`label[for="birthdate${idx+1}"]`);
+          if (label) {
+            label.textContent = isRequired ? 'Ngày sinh (*)' : 'Ngày sinh';
+          }
+        });
+      }
+ 
+      function updateGenderOptions(selectedValue) {
+        const isFemaleOnly = selectedValue === 'doi-nu-4.5';
+        const athleteForms = document.querySelectorAll('.athlete-form');
+        athleteForms.forEach((form, idx) => {
+          const maleRadio = form.querySelector(`input[name="gender[${idx}]"][value="nam"]`);
+          const femaleRadio = form.querySelector(`input[name="gender[${idx}]"][value="nu"]`);
+          const maleLabel = maleRadio ? maleRadio.closest('label') : null;
+          if (maleRadio && maleLabel) {
+            if (isFemaleOnly) {
+              maleRadio.disabled = true;
+              maleLabel.style.display = 'none';
+              if (maleRadio.checked && femaleRadio) {
+                femaleRadio.checked = true;
+              }
+            } else {
+              maleRadio.disabled = false;
+              maleLabel.style.display = '';
+            }
+          }
+          if (femaleRadio) {
+            femaleRadio.disabled = false;
+            const femaleLabel = femaleRadio.closest('label');
+            if (femaleLabel) femaleLabel.style.display = '';
+          }
+        });
+      }
+      
+      radioInputs.forEach(function(radio) {
+        radio.addEventListener('change', function() {
+          if (this.checked) {
+            const selectedValue = this.value;
+            categoryName.textContent = categoryLabels[selectedValue];
+            dynamicForm.style.display = 'block';
+                      updateBirthdateLabels(selectedValue);
+          updateGenderOptions(selectedValue);
+          clearError('category');
+          
+          // Set max date for date inputs (yesterday)
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          const maxDate = yesterday.toISOString().split('T')[0];
+          document.querySelectorAll('input[type="date"]').forEach(input => {
+            input.max = maxDate;
+          });
+          }
+        });
+      });
+      
+      addAthleteBtn.addEventListener('click', function() {
+        const currentCount = athletesContainer.querySelectorAll('.athlete-form').length;
+        const newNumber = currentCount + 1;
+ 
+        const newAthleteForm = document.createElement('div');
+        newAthleteForm.className = 'athlete-form';
+        newAthleteForm.setAttribute('data-athlete', newNumber);
+        
+        newAthleteForm.innerHTML = `
+          <h4 class="athlete-title">Vận động viên ${newNumber}:</h4>
+          <div class="form-row">
+           <div class="form-column1">
+            <label class="form-label" for="fullname${newNumber}">Họ và tên (*)</label>
+            <input class="form-input-infor" id="fullname${newNumber}" name="full_name[]" placeholder="Nhập họ và tên" type="text"/>
+            <div class="error-message" id="fullname${newNumber}-error"></div>
+            
+            <div class="form-group">
+             <label class="form-label" for="birthdate${newNumber}">Ngày sinh</label>
+             <input class="form-input-infor" id="birthdate${newNumber}" name="date_of_birth[]" placeholder="dd/mm/yyyy" type="date"/>
+             <div class="error-message" id="birthdate${newNumber}-error"></div>
+            </div>
+            <div class="form-group">
+             <label class="form-label">Giới tính</label>
+             <div class="gender-options">
+              <label class="radio-item1">
+               <input class="radio-input" name="gender[${currentCount}]" type="radio" value="nam"/>
+               <span>Nam</span>
+              </label>
+              <label class="radio-item2">
+               <input class="radio-input" name="gender[${currentCount}]" type="radio" value="nu"/>
+               <span>Nữ</span>
+              </label>
+             </div>
+             <div class="error-message" id="gender${newNumber}-error"></div>
+            </div>
+           </div>
+           
+           <div class="form-column2">
+            <label class="form-label" for="phone${newNumber}">Số điện thoại (*)</label>
+            <input class="form-input-infor" id="phone${newNumber}" name="phone_number[]" placeholder="Nhập số điện thoại" type="text"/>
+            <div class="error-message" id="phone${newNumber}-error"></div>
+            
+            <div class="form-group">
+             <label class="form-label" for="nick${newNumber}">Nick</label>
+             <input class="form-input-infor" id="nick${newNumber}" name="nick_name[]" placeholder="Nhập nick" type="text"/>
+            </div>
+            
+            <div class="form-group image-upload-row">
+             <label class="form-label" for="image${newNumber}" style="margin-bottom:0;">Hình ảnh (*)</label>
+             <input type="file" id="image${newNumber}" name="avatar[]" class="file-input" accept="image/*" style="display: none;">
+             <label for="image${newNumber}" class="file-upload-btn" style="margin-left:12px;">Tải ảnh lên</label>
+             <div class="error-message" id="image${newNumber}-error"></div>
+            </div>
+           </div>
+          </div>
+          <button type="button" class="remove-athlete-btn" onclick="removeAthlete(${newNumber})" aria-label="Xóa vận động viên">
+           <i class="fas fa-minus"></i>
+          </button>
+        `;
+        
+        athletesContainer.appendChild(newAthleteForm);
+        
+        // Set max date for new date input (yesterday)
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        const maxDate = yesterday.toISOString().split('T')[0];
+        const newDateInput = newAthleteForm.querySelector('input[type="date"]');
+        if (newDateInput) {
+          newDateInput.max = maxDate;
+        }
+        
+        const selectedRadio = document.querySelector('input[name="category"]:checked');
+        if (selectedRadio) {
+          updateBirthdateLabels(selectedRadio.value);
+          updateGenderOptions(selectedRadio.value);
+        }
+      });
+
+      // Real-time validation
+      function addRealTimeValidation(inputId, validator) {
+        const input = document.getElementById(inputId);
+        if (input) {
+          input.addEventListener('blur', function() {
+            const error = validator(this.value);
+            if (error) {
+              showError(inputId, error);
+            } else {
+              clearError(inputId);
+            }
+          });
+          
+          input.addEventListener('input', function() {
+            clearError(inputId);
+          });
+        }
+      }
+
+      // Add real-time validation for team leader fields
+      addRealTimeValidation('fullname', validateName);
+      addRealTimeValidation('phone', validatePhone);
+
+      // Add real-time validation for file uploads
+      document.addEventListener('change', function(e) {
+        if (e.target.classList.contains('file-input')) {
+          const file = e.target.files[0];
+          const errorId = e.target.id + '-error';
+          const error = validateImage(file);
+          
+          if (error) {
+            showError(errorId, error);
+          } else {
+            clearError(errorId);
+          }
+        }
+      });
+
+      // Form validation
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Clear all previous errors
+        document.querySelectorAll('.error-message').forEach(el => {
+          el.textContent = '';
+          el.classList.remove('show');
+        });
+        document.querySelectorAll('.form-input, .form-input-infor').forEach(el => {
+          el.classList.remove('error');
+        });
+
+        let isValid = true;
+        const errors = [];
+
+        // Validate team leader
+        const fullname = document.getElementById('fullname').value;
+        const fullnameError = validateName(fullname);
+        if (fullnameError) {
+          showError('fullname', fullnameError);
+          isValid = false;
+          errors.push('Thông tin đội trưởng: ' + fullnameError);
+        }
+
+        const phone = document.getElementById('phone').value;
+        const phoneError = validatePhone(phone);
+        if (phoneError) {
+          showError('phone', phoneError);
+          isValid = false;
+          errors.push('Thông tin đội trưởng: ' + phoneError);
+        }
+
+        // Validate category selection
+        const selectedCategory = document.querySelector('input[name="category"]:checked');
+        if (!selectedCategory) {
+          showError('category', 'Vui lòng chọn nội dung giải đấu');
+          isValid = false;
+          errors.push('Vui lòng chọn nội dung giải đấu');
+        }
+
+        // Validate athletes
+        const athleteForms = document.querySelectorAll('.athlete-form');
+        if (athleteForms.length === 0) {
+          isValid = false;
+          errors.push('Phải có ít nhất 1 vận động viên');
+        }
+
+        athleteForms.forEach((form, index) => {
+          const athleteNumber = index + 1;
+          
+          // Validate athlete name
+          const athleteName = document.getElementById(`fullname${athleteNumber}`).value;
+          const athleteNameError = validateName(athleteName);
+          if (athleteNameError) {
+            showError(`fullname${athleteNumber}`, athleteNameError);
+            isValid = false;
+            errors.push(`Vận động viên ${athleteNumber}: ${athleteNameError}`);
+          }
+
+          // Validate athlete phone
+          const athletePhone = document.getElementById(`phone${athleteNumber}`).value;
+          const athletePhoneError = validatePhone(athletePhone);
+          if (athletePhoneError) {
+            showError(`phone${athleteNumber}`, athletePhoneError);
+            isValid = false;
+            errors.push(`Vận động viên ${athleteNumber}: ${athletePhoneError}`);
+          }
+
+          // Validate date of birth
+          const birthdate = document.getElementById(`birthdate${athleteNumber}`).value;
+          const birthdateError = validateDateOfBirth(birthdate, selectedCategory ? selectedCategory.value : '');
+          if (birthdateError) {
+            showError(`birthdate${athleteNumber}`, birthdateError);
+            isValid = false;
+            errors.push(`Vận động viên ${athleteNumber}: ${birthdateError}`);
+          }
+
+          // Validate gender
+          const genderRadios = form.querySelectorAll('input[name^="gender"]');
+          const selectedGender = Array.from(genderRadios).find(radio => radio.checked);
+          if (selectedCategory && selectedCategory.value === 'doi-nu-4.5') {
+            const genderError = validateGender(selectedGender ? selectedGender.value : '', selectedCategory.value);
+            if (genderError) {
+              showError(`gender${athleteNumber}`, genderError);
+              isValid = false;
+              errors.push(`Vận động viên ${athleteNumber}: ${genderError}`);
+            }
+          }
+
+          // Validate image
+          const imageInput = document.getElementById(`image${athleteNumber}`);
+          const imageError = validateImage(imageInput.files[0]);
+          if (imageError) {
+            showError(`image${athleteNumber}`, imageError);
+            isValid = false;
+            errors.push(`Vận động viên ${athleteNumber}: ${imageError}`);
+          }
+        });
+
+        if (!isValid) {
+          const errorMessage = errors && Array.isArray(errors) ? errors.join('<br>') : 'Có lỗi xảy ra';
+          showPopup('error', 'Lỗi đăng ký', errorMessage);
+          return false;
+        }
+
+        // If validation passes, submit the form via AJAX
+        const submitButton = this.querySelector('.submit-button');
+        const originalText = submitButton.innerHTML;
+        submitButton.innerHTML = '<span>Đang gửi...</span>';
+        submitButton.disabled = true;
+        
+        const formData = new FormData(this);
+        
+        // Check if this is edit mode
+        const editTeamId = localStorage.getItem('editTeamId');
+        let submitUrl = '/api/add-player';
+        
+        if (editTeamId) {
+          // This is edit mode - update existing player
+          formData.append('teamId', editTeamId);
+          formData.append('isEdit', 'true');
+          submitUrl = '/api/update-player';
+        }
+        
+        fetch(submitUrl, {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          // Check if response is JSON
+          const contentType = response.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            return response.json();
+          } else {
+            // If not JSON, throw error to be caught
+            throw new Error('Server returned non-JSON response');
+          }
+        })
+        .then(data => {
+          if (data.success === true) {
+            const successMessage = editTeamId ? 'Cập nhật VĐV thành công!' : 'Đăng ký thành công!';
+            showPopup('success', 'Thành công!', successMessage);
+            
+            // Clear edit team ID after successful update
+            if (editTeamId) {
+              localStorage.removeItem('editTeamId');
+            }
+            
+            // Reload page after successful submission
+            setTimeout(() => {
+              // Check if user is admin and redirect accordingly
+              const urlParams = new URLSearchParams(window.location.search);
+              const isAdmin = urlParams.get('admin') === 'true';
+              const redirectUrl = isAdmin ? '/dstd_admin' : '/dstd_user';
+              window.location.href = redirectUrl;
+            }, 2000);
+          } else if (data.success === false) {
+            const errorMessage = data.errors && Array.isArray(data.errors) ? data.errors.join('<br>') : (data.message || 'Có lỗi xảy ra');
+            showPopup('error', data.message || 'Lỗi', errorMessage);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          const errorMessage = editTeamId ? 'Có lỗi xảy ra khi cập nhật thông tin. Vui lòng thử lại.' : 'Có lỗi xảy ra khi gửi đăng ký. Vui lòng thử lại.';
+          showPopup('error', 'Lỗi hệ thống', errorMessage);
+        })
+        .finally(() => {
+          submitButton.innerHTML = originalText;
+          submitButton.disabled = false;
+        });
+      });
+    });
+    
+    function removeAthlete(athleteNumber) {
+      const athleteForm = document.querySelector(`[data-athlete="${athleteNumber}"]`);
+      if (athleteForm) {
+        athleteForm.remove();
+        reorderAthletes();
+      }
+    }
+    
+    function reorderAthletes() {
+      const athleteForms = document.querySelectorAll('.athlete-form');
+      athleteForms.forEach((form, index) => {
+        const newNumber = index + 1;
+        form.setAttribute('data-athlete', newNumber);
+        
+        const title = form.querySelector('.athlete-title');
+        title.textContent = `Vận động viên ${newNumber}:`;
+        
+        const inputs = form.querySelectorAll('input');
+       inputs.forEach(input => {
+         const oldId = input.id;
+         if (oldId) {
+           const newId = oldId.replace(/\d+$/, newNumber);
+           input.id = newId;
+         }
+         
+         const oldName = input.name;
+         if (oldName && oldName.startsWith('gender')) {
+           input.name = `gender[${index}]`;
+         }
+       });
+       
+       const labels = form.querySelectorAll('label[for]');
+       labels.forEach(label => {
+         const oldFor = label.getAttribute('for');
+         if (oldFor) {
+           const newFor = oldFor.replace(/\d+$/, newNumber);
+           label.setAttribute('for', newFor);
+         }
+       });
+       
+       const removeBtn = form.querySelector('.remove-athlete-btn');
+       if (removeBtn) {
+         removeBtn.onclick = () => removeAthlete(newNumber);
+       }
+      });
+      
+      athleteCount = athleteForms.length;
+    }
+    
+    // Xử lý upload ảnh
+    document.addEventListener('change', function(e) {
+      if (e.target.classList.contains('file-input')) {
+        const file = e.target.files[0];
+        const fileInput = e.target;
+        const uploadBtn = fileInput.nextElementSibling;
+        
+        if (file) {
+          // Validate file type
+          if (!file.type.startsWith('image/')) {
+            showError(fileInput.id + '-error', 'Vui lòng chọn file hình ảnh');
+            uploadBtn.textContent = 'Tải ảnh lên';
+            uploadBtn.classList.remove('success', 'error');
+            return;
+          }
+          
+          // Validate file size (max 5MB)
+          if (file.size > 5 * 1024 * 1024) {
+            showError(fileInput.id + '-error', 'File quá lớn. Vui lòng chọn file nhỏ hơn 5MB');
+            uploadBtn.textContent = 'Tải ảnh lên';
+            uploadBtn.classList.remove('success', 'error');
+            return;
+          }
+          
+          uploadBtn.textContent = file.name;
+          uploadBtn.classList.add('success');
+          uploadBtn.classList.remove('error');
+          // Clear error when file is selected
+          const errorId = fileInput.id + '-error';
+          clearError(errorId);
+        } else {
+          uploadBtn.textContent = 'Tải ảnh lên';
+          uploadBtn.classList.remove('success', 'error');
+        }
+      }
+    });
+   </script>
+ </body>
+</html>

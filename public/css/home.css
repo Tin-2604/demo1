@@ -1,0 +1,160 @@
+/* CSS cho layout tổng thể */
+.body-layout {
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+/* Sidebar styling moved to sidebar.css */
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 64px 40px;
+  background: url('/images/backgroundhome.png') center center / cover no-repeat;
+  position: relative;
+  margin: 0;
+}
+
+.main-content h1 {
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  max-width: 56rem;
+}
+
+.main-content h1 .name-user {
+  color: var(--foundation-yellow-light-active, #FFECB2) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 39px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 120% !important;
+}
+
+.main-content h2 {
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 31px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 2rem;
+  max-width: 56rem;
+  text-align: center;
+  width: 1092px;
+  height: 37px;
+}
+
+.button-primary {
+  margin-bottom: 3rem;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button-primary:hover {
+  background: #1d4ed8;
+}
+
+.main-content section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px;
+  width: 200px;
+height: 300px;
+flex-shrink: 0;
+border-radius: 16px;
+justify-content: center;
+align-items: center;
+
+}
+
+@media (min-width: 640px) {
+  .main-content section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.main-content section img {
+  border-radius: 0.75rem;
+  height: 320px;
+}
+
+/* Simple text overlay */
+.image-text-overlay {
+  position: relative;
+  display: inline-block;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.overlay-text1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 0.7;
+  align-self: center;
+  margin-top:-20px;
+
+}
+
+.overlay-text2 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  align-self: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 24px */
+}
+
+/* Hover effects */
+.image-text-overlay {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+}
+
+.image-text-overlay:hover {
+  transform: scale(1.05);
+}
+
+.image-text-overlay:hover .overlay-text1 p:last-child {
+  color: #facc15;
+  transition: color 0.3s ease;
+}
