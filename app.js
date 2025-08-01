@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
@@ -49,14 +50,14 @@ const requireAdmin = (req, res, next) => {
   }
 };
 
-// Kết nối MySQL - Sử dụng biến môi trường cho Render
+// Kết nối MySQL - Sử dụng biến môi trường cho Railway
 const db = mysql.createConnection({
   host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT || 3306,
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || 'admin',
   database: process.env.DB_NAME || 'pickleball',
-  charset: 'utf8mb4',
-  collation: 'utf8mb4_unicode_ci'
+  charset: 'utf8mb4'
 });
 
 // Test kết nối
